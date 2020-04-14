@@ -1,7 +1,8 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
 #include <stdbool.h>
-#include<locale.h>
+
 #define MAX 10
 
 int main(int argc, char const *argv[]){
