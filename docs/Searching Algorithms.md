@@ -25,8 +25,8 @@ Vamos supor que temos o seguinte problema:
 
 Uma abordagem simples para resolver esse problema é fazer uma `busca linear`, ou seja:
 
-- Comece a partir do elemento mais à esquerda do array e, um por um, compare esse elemento `x` com cada elemento subsequente.
-- Se `x` corresponde ao elemento, retorna o índice.
+- Comece a partir do elemento mais à esquerda do array e, um por um, compare esse elemento com cada elemento subsequente até o último índice do array.
+- Se `x` corresponder ao elemento, retorne o índice.
 - Se `x` não corresponder a nenhum dos elementos, retorne `-1`.
 
 <p align="center">
