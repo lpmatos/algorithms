@@ -33,7 +33,7 @@ Uma abordagem simples para resolver esse problema é fazer uma `busca linear`, o
  <img src="./assets/Linear-Search.png" alt="linear-search"></a>
 </p>
 
-A complexidade de tempo desse algoritmo é `O(n)`, o que justifica o fato da pesquisa linear ser raramente utilizade de forma prática. Outros algoritmos de busca, como o de `busca binária` e `tabela hash`, permitem uma comparação de busca muito mais rápida.
+A complexidade de tempo desse algoritmo é `O(n)`, o que justifica o fato de ser raramente utilizade de forma prática. Outros algoritmos de busca como: `busca binária` e `tabela hash`, são mais usados pois permitem uma busca muito mais rápida.
 
 ### Linear Search Worst-Case Complexity
 
