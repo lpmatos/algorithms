@@ -17,13 +17,13 @@ Com base no tipo de ordenação esses algoritmos são classificados em duas cate
 
 ## Linear Search
 
-O problema da `busca linear` é: 
+Vamos supor que temos o seguinte problema:
 
 >
 > Dado um array de n elementos, escreva uma função para pesquisar um dado elemento `x` nesse array.
 >
 
-Uma abordagem simples para resolver esse problema é fazer uma pesquisa linear, ou seja:
+Uma abordagem simples para resolver esse problema é fazer uma `busca linear`, ou seja:
 
 - Comece a partir do elemento mais à esquerda do array e, um por um, compare esse elemento `x` com cada elemento subsequente.
 - Se `x` corresponde ao elemento, retorna o índice.
