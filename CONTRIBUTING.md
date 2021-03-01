@@ -1,10 +1,10 @@
 # [＜](README.md) Contribuindo
 
-Primeiramente, obrigado 🎉! É muito gratificante saber que podemos contar com novas features e pull-requests do nosso time! Caso sua mudança não seja trivial, abra uma **issue** nesse projeto para podermos discutir a sua ideia e estratégia de implementação. Será incrível poder interagir e se conectar com novos contribuidores!
+Primeiramente, obrigado 🎉! É muito gratificante saber que podemos contar com novas **features** e **pull-requests** da comunidade! Caso sua mudança não seja trivial, abra uma **issue** nesse projeto para podermos discutir a sua ideia e estratégia de implementação. Será incrível poder interagir e se conectar com novos contribuidores!
 
 ## ➤ Overview
 
-Nosso objetivo aqui é gerar valor para o processo de desenvolvimento de projetos com múltiplas participações, independente de um time core específico. Pensando nisso, implementamos um arquivo de contribuição para abordarmos as melhores práticas a serem seguidas durante seu processo de trabalho nesse projeto. O modelo é apenas uma recomendação e ainda está em processo de construção, esperamos que todos possam contribuir para essa evolução 🤗!
+Nosso objetivo aqui é gerar valor para o processo de desenvolvimento de projetos com múltiplas participações, independente de um time core. Pensando nisso, implementamos um arquivo de contribuição para abordarmos as melhores práticas a serem seguidas durante o processo de trabalho nesse projeto. O modelo é apenas uma recomendação e ainda está em processo de construção. Esperamos que todos possam contribuir para essa evolução 🤗!
 
 ## ➤ Menus
 
@@ -30,13 +30,13 @@ Nosso objetivo aqui é gerar valor para o processo de desenvolvimento de projeto
 
 ### Tools
 
-- ⮚ Package manage [NPM](https://www.npmjs.com/get-npm) or [Yarn](https://yarnpkg.com/getting-started/install).
-- ⮚ Manage local tasks with [make](https://www.gnu.org/software/make/manual/make.html) commands.
-- ⮚ [GitLeaks](https://github.com/zricethezav/gitleaks) - Scan for secrets using regex and entropy.
-- ⮚ NPM modules automation.
-  - [Semantic Release](https://github.com/semantic-release/semantic-release) + Plugins configuration
-  - [Commitlint](https://github.com/conventional-changelog/commitlint) using [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
-  - Git Hooks with [Husky](https://github.com/typicode/husky).
+- ⮚ Gerenciador de pacotes [NPM](https://www.npmjs.com/get-npm) ou [Yarn](https://yarnpkg.com/getting-started/install).
+- ⮚ Automatize tarefas locais com commandos [make](https://www.gnu.org/software/make/manual/make.html).
+- ⮚ Faça o scan de secredos em seu código com o [GitLeaks](https://github.com/zricethezav/gitleaks).
+- ⮚ Pacotes de automação utilizados:
+  - [Semantic Release](https://github.com/semantic-release/semantic-release) + Plugins de configuração
+  - [Commitlint](https://github.com/conventional-changelog/commitlint) usando [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+  - Git Hooks com [Husky](https://github.com/typicode/husky).
 
 ### Patterns
 
@@ -51,6 +51,7 @@ Nesse documento definimos o passo a passo de contribução para qualquer novo co
 
 Para garantir a consistência do nosso código fonte, lembre-se de seguir essas regras enquanto trabalhar:
 
+- ⮚ Antes de iniciar o desenvolvimento se certifique de instalar todas as ferramentas abordadas na seção [Tools and Patterns](#-tools-and-patterns).
 - ⮚ Todos as **features** ou **fixs** (correções de bugs) **devem ser testados**!
 - ⮚ A pipeline deve possui um status de sucesso antes de qualquer **merge-request** ser aprovado. Caso contrário, o código não é mesclado em seu branch alvo.
 - ⮚ Todas as **features** são criadas a partir da branch **develop**, possuindo curta duração e sendo mescladas novamente em **develop** assim que o **merge-request** for aprovado.
