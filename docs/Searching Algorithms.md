@@ -7,9 +7,9 @@ Os algoritmos de busca são projetados para verificar ou recuperar um elemento d
 Com base no tipo de ordenação, esses algoritmos são classificados em duas categorias:
 
 - **Busca Sequencial**:
-  - Nesse tipo a estrutura de dados (lista ou matriz, por exemplo) é percorrida sequencialmente e cada elemento é verificado. Um tipo de busca dessa forma é a busca linear.
+  - Nesse tipo a estrutura de dados (lista ou matriz, por exemplo) é percorrida sequencialmente e cada elemento é verificado. Um tipo de busca dessa forma é a `busca linear`.
 - **Busca de Intervalo**:
-  - Esses algoritmos são projetos especificamente para buscar em estruturas de dados classificadas. A busca nesse tipo de algoritmo é muito mais eficiente do que uma busca linear, uma vez que nela o centro da estrutura é visitado repetidamente, além do espaço de pesquisa ser divido pela metade. Um tipo de busca dessa forma é a busca binária.
+  - Esses algoritmos são projetos especificamente para buscar em estruturas de dados classificadas. A busca nesse tipo de algoritmo é muito mais eficiente do que uma `busca linear`, uma vez que nela o centro da estrutura é visitado repetidamente, além do espaço de pesquisa ser divido pela metade. Um tipo de busca dessa forma é a `busca binária`.
 
 ## Linear Search
 
@@ -29,7 +29,7 @@ Uma abordagem simples para resolver esse problema é fazer uma pesquisa linear, 
  <img src="./assets/Linear-Search.png" alt="linear-search"></a>
 </p>
 
-A complexidade de tempo desse algoritmo é `O(n)`, o que justifica o fato da pesquisa linear ser raramente utilizade de forma prática. Outros algoritmos de busca, como o de busca binária e tabelas hash, permitem uma comparação de busca muito mais rápida.
+A complexidade de tempo desse algoritmo é `O(n)`, o que justifica o fato da pesquisa linear ser raramente utilizade de forma prática. Outros algoritmos de busca, como o de `busca binária` e `tabela hash`, permitem uma comparação de busca muito mais rápida.
 
 ### Linear Search Worst-Case Complexity
 
