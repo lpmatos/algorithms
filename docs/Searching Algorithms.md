@@ -11,9 +11,28 @@ Os algoritmos de busca são projetados para verificar ou recuperar um elemento d
 
 ## Linear Search
 
+O problema da busca linear é: 
+
+>
+> Dado um array arr [] de n elementos, escreva uma função para pesquisar um dado elemento x nesse array.
+>
+
+Uma abordagem simples para resolver esse problema é fazer uma pesquisa linear, ou seja:
+
+- Comece a partir do elemento mais à esquerda do array arr[] e, um por um, compare esse elemento x com cada elemento subsequente do arr array []
+- Se x corresponde ao elemento, retorna o índice.
+- Se x não corresponder a nenhum dos elementos, retorne -1.
+
 <p align="center">
  <img src="./assets/Linear-Search.png" alt="linear-search"></a>
 </p>
+
+A complexidade de tempo desse algoritmo é `O(n)`, o que justifica o fato da pesquisa linear ser raramente utilizade de forma prática. Outros algoritmos de busca, como o de busca binária e tabelas hash, permitem uma comparação de busca muito mais rápida.
+
+### Linear Search Worst-Case Complexity
+
+- Se o elemento for encontrado no último índice `O(n)` a `O(1)`
+- Se o elemento não for encontrado `O(n)` a `O(n/2)`
 
 ## Binary Search
 
