@@ -2,7 +2,9 @@
 
 ## Overview
 
-Os algoritmos de busca são projetados para verificar ou recuperar um elemento de qualquer estrutura de dados onde ele está armazenado. Com base no tipo de ordenação, esses algoritmos são classificados em duas categorias:
+Os algoritmos de busca são projetados para verificar ou recuperar um elemento de qualquer estrutura de dados onde ele está armazenado. 
+
+Com base no tipo de ordenação, esses algoritmos são classificados em duas categorias:
 
 - **Busca Sequencial**:
   - Nesse tipo a estrutura de dados (lista ou matriz, por exemplo) é percorrida sequencialmente e cada elemento é verificado. Um tipo de busca dessa forma é a busca linear.
