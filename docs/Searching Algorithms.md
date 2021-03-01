@@ -12,11 +12,11 @@ Os algoritmos de busca são projetados para verificar ou recuperar um elemento d
 ## Linear Search
 
 <p align="center">
- <img width=200px height=200px src="./assets/Linear-Search.png" alt="linear-search"></a>
+ <img src="./assets/Linear-Search.png" alt="linear-search"></a>
 </p>
 
 ## Binary Search
 
 <p align="center">
- <img width=200px height=200px src="./assets/Binary-Search.png" alt="binary-search"></a>
+ <img src="./assets/Binary-Search.png" alt="binary-search"></a>
 </p>
