@@ -3,6 +3,7 @@
   "scripts": {
     "cm": "git cz",
     "secrets": "gitleaks --verbose -c .gitleaks.toml",
+    "dive": "dive build .",
     "release": "npx semantic-release --no-ci",
     "release-debug": "npx semantic-release --dry-run --no-ci --debug"
   },
