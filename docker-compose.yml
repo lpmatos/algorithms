@@ -1,38 +1,46 @@
-# =============================================================================
-# BASE CONFIGURATION
-# =============================================================================
+---
+version: "3.9"
 
-version: "3.7"
+# ================================================
+# ANCHORS
+# ================================================
 
-# =============================================================================
-# SERVICES
-# =============================================================================
+x-logging: &default-logging
+  driver: "json-file"
+  options:
+    max-size: "500k"
+    max-file: "20"
+
+x-entrypoint: &default-entrypoint
+  entrypoint: >
+    /bin/sh -c "
+      set -e
+      echo Waiting TTY interaction..
+      /bin/bash || exit 0
+    "
+
+# ================================================
+# DEFINING SERVICES
+# ================================================
 
 services:
 
-# =============================================================================
-# ALGORITHMS
-# =============================================================================
-
   algorithms:
-    container_name: ${CONTAINER_NAME}
-    env_file: ./.env
+    container_name: $CONTAINER_NAME
+    env_file: .env.test
     build:
-      context: ./code
+      context: $PATH_DOCKERFILE
       dockerfile: Dockerfile
-    restart: unless-stopped
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "500k"
-        max-file: "20"
-    networks:
-      - algorithms
+    <<: *default-entrypoint
+    stdin_open: true
+    tty: true
+    restart: on-failure
+    logging: *default-logging
+    networks: [ "algorithms" ]
 
-# =============================================================================
-# NETWORK
-# =============================================================================
+# ================================================
+# DEFINING NETWORKS
+# ================================================
 
 networks:
   algorithms:
-    

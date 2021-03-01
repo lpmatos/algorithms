@@ -1,0 +1,29 @@
+# http://editorconfig.org
+
+# stop recursing upwards for other .editorconfig files
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+indent_size = 2
+tab_width = 2
+indent_style = space
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+charset = utf-8
+
+# 4 space indentation
+[*.{py,java,r,R}]
+indent_style = space
+indent_size = 4
+
+# 2 space indentation
+[*.{js,json,y{a,}ml,html,cwl}]
+indent_style = space
+indent_size = 2
+
+[*.{md,Rmd,rst}]
+trim_trailing_whitespace = false
+indent_style = space
+indent_size = 2

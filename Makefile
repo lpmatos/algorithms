@@ -1,51 +1,81 @@
-# =============================================================================
-# DECLARING VARIABLES
-# =============================================================================
+MAKEFLAGS += --warn-undefined-variables
 
-# DOCKERFILE PATH
-PATH_DOCKERFILE=./Dockerfile
+# It's necessary to set this because some environments don't link sh -> bash.
+SHELL := /usr/bin/env bash
 
-# DOCKERFILE CONTENTX
-CONTEXT_DOCKERFILE=./
+##################################################
+# HELPER
+##################################################
 
-# CONTAINERS
-DOCKER_CONTAINER_LIST:=$(shell docker ps -aq)
+.PHONY: help
+help:
+	@echo ""
+	@echo "***************************"
+	@echo "* 🤖 Management commands"
+	@echo "* "
+	@echo "* Usage:"
+	@echo "* "
+	@echo "*  🎉 Short commands 🎉"
+	@echo "* "
+	@echo "* 📌 make global-requirements"
+	@echo "* 📌 make yarn-requirements"
+	@echo "* 📌 make npm-requirements"
+	@echo "* 📌 make yarn-version"
+	@echo "* 📌 make npm-version"
+	@echo "* 📌 make yarn-install"
+	@echo "* 📌 make npm-install"
+	@echo "* 📌 make verify"
+	@echo "* 📌 make release-debug"
+	@echo "* 📌 make release"
+	@echo "* "
+	@echo "***************************"
+	@echo ""
 
-# =============================================================================
-# DOCKER
-# =============================================================================
+##################################################
+# SHORTCUTS
+##################################################
 
-build-back:
-	docker image build --no-cache -t algorithms -f ${PATH_DOCKERFILE} ${CONTEXT_DOCKERFILE}
+global-requirements:
+	@echo "==> 🌐 Checking global requirements..."
+	@command -v gitleaks >/dev/null || ( echo "ERROR: 🆘 gitleaks binary not found. Exiting." && exit 1)
+	@command -v git >/dev/null || ( echo "ERROR: 🆘 git binary not found. Exiting." && exit 1)
+	@echo "==> ✅ Global requirements are met!"
 
-build-front:
-	docker image build --no-cache -t algorithms -f ${PATH_DOCKERFILE} ${CONTEXT_DOCKERFILE}
+yarn-requirements:
+	@echo "==> 📜 Checking yarn requirements..."
+	@command -v yarn >/dev/null || ( echo "ERROR: 🆘 yarn binary not found. Exiting." && exit 1)
+	@echo "==> ✅ Package requirements are met!"
 
-system:
-	docker system prune -af
+npm-requirements:
+	@echo "==> 📜 Checking npm requirements..."
+	@command -v npm >/dev/null || ( echo "ERROR: 🆘 npm binary not found. Exiting." && exit 1)
+	@echo "==> ✅ Package requirements are met!"
 
-volume:
-	docker volume prune -f
+yarn-version: yarn-requirements
+	@echo "==> ✨ Yarn version: $(shell yarn --version)"
 
-network:
-	docker network prune -f
+npm-version: npm-requirements
+	@echo "==> ✨ NPM version: $(shell npm --version)"
 
-stop:
-	docker stop ${DOCKER_CONTAINER_LIST}
+yarn-install:
+	@echo "==> 🔥 Yarn install packages..."
+	@yarn install
 
-remove:
-	docker rm ${DOCKER_CONTAINER_LIST}
+npm-install:
+	@echo "==> 🔥 NPM install packages..."
+	@npm install
 
-# =============================================================================
-# DOCKER-COMPOSE
-# =============================================================================
+verify: yarn-install
+ifeq ($(GITLAB_TOKEN),)
+	@echo "ERROR: 🆘 no gitlab token was provided - undefined variable. Exiting." && exit 1
+else
+	@echo "==> 🎊 We have a gitlab token!"
+endif
 
-compose:
-	docker-compose up --build
+release-debug: verify
+	@echo "==> 📦 Runnig release debug..."
+	@yarn run release-debug
 
-back:
-	docker-compose up --build -d
-
-down:
-	docker-compose down
-	
+release: verify
+	@echo "==> 📦 Runnig release..."
+	@yarn run release
