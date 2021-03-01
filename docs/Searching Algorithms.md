@@ -20,7 +20,7 @@ Com base no tipo de ordenação esses algoritmos são classificados em duas cate
 Vamos supor que temos o seguinte problema:
 
 >
-> Dado um array de n elementos, escreva uma função para pesquisar um dado elemento `x` nesse array.
+> Dado um array de `n` elementos, escreva uma função para buscar um elemento `x` nesse array.
 >
 
 Uma abordagem simples para resolver esse problema é fazer uma `busca linear`, ou seja:
@@ -42,6 +42,30 @@ A complexidade de tempo desse algoritmo é `O(n)`, o que justifica o fato de ser
 
 ## Binary Search
 
+Vamos supor que temos o seguinte problema:
+
+>
+> Dado um array ordenado de `n` elementos, escreva uma função para buscar um elemento `x` nesse array.
+>
+
+Uma abordagem simples para resolver esse problema é fazer uma `busca linear`, porém a complexidade de tempo desse algoritmo é extremamente alta `O(n)`. Outra abordagem que você pode utilizar para realizar essa mesma tarefa é a `busca binária`.
+
+Na `busca binária` fazemos:
+
+- Buscamos em uma matriz classificada dividindo repetidamente o intervalo de pesquisa pela metade.
+- Comece com um intervalo cobrindo todo o array.
+- Se o valor da chave de pesquisa for menor que o item no meio do intervalo, restrinja o intervalo à metade inferior. Caso contrário, estreite-o até a metade superior.
+- Verifique repeditamente até que o valor seja encontrado ou o intervalo esteja vazio.
+
 <p align="center">
  <img src="./assets/Binary-Search.png" alt="binary-search"></a>
 </p>
+
+A ideia da `busca binária` é usar a informação que o array está classificado e reduzir a complexidade do tempo para `O(Log n)`. Portanto, podemos resumir os passos em:
+
+1. Compare o elemento `x` com o elemento do `meio`.
+2. Se `x` corresponder ao elemento do `meio`, retornamos o índice do meio.
+3. Senão, ou seja, se `x` for maior que o elemento do `meio`, então `x` deve ficar na metade direita da submatriz após o elemento do `meio`. Portanto. recorremos para a metade da direita.
+4. Caso contrário, ou seja, se `x` for menor, recorremos para a metade da esquerda.
+
+Para resolver esse problema poder adotar uma implementação **recursiva** ou uma implementação **iterativa**.
