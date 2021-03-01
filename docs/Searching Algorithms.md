@@ -14,14 +14,14 @@ Os algoritmos de busca são projetados para verificar ou recuperar um elemento d
 O problema da busca linear é: 
 
 >
-> Dado um array arr [] de n elementos, escreva uma função para pesquisar um dado elemento x nesse array.
+> Dado um array de n elementos, escreva uma função para pesquisar um dado elemento `x` nesse array.
 >
 
 Uma abordagem simples para resolver esse problema é fazer uma pesquisa linear, ou seja:
 
-- Comece a partir do elemento mais à esquerda do array arr[] e, um por um, compare esse elemento x com cada elemento subsequente do arr array []
-- Se x corresponde ao elemento, retorna o índice.
-- Se x não corresponder a nenhum dos elementos, retorne -1.
+- Comece a partir do elemento mais à esquerda do array e, um por um, compare esse elemento `x` com cada elemento subsequente.
+- Se `x` corresponde ao elemento, retorna o índice.
+- Se `x` não corresponder a nenhum dos elementos, retorne `-1`.
 
 <p align="center">
  <img src="./assets/Linear-Search.png" alt="linear-search"></a>
