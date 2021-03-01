@@ -35,9 +35,7 @@ int main(int argc, char const *argv[]){
     }
   }
 
-  if(!found){
-    printf("\n\nThe element %d wasn't found 👽...\n\n", valor);
-  }
+  if(!found){printf("\n\nThe element %d wasn't found 👽...\n\n", valor);}
 
   return 0;
 }

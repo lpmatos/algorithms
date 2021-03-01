@@ -66,10 +66,10 @@ npm-install:
 	@npm install
 
 verify: yarn-install
-ifeq ($(GITLAB_TOKEN),)
-	@echo "ERROR: 🆘 no gitlab token was provided - undefined variable. Exiting." && exit 1
+ifeq ($(GITHUB_TOKEN),)
+	@echo "ERROR: 🆘 no GITHUB TOKEN was provided - undefined variable. Exiting." && exit 1
 else
-	@echo "==> 🎊 We have a gitlab token!"
+	@echo "==> 🎊 We have a GITHUB TOKEN!"
 endif
 
 release-debug: verify

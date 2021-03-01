@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <locale.h>
 
-void swap(int *atual, int *prox){
-  int tmp = *atual;
-  *atual = *prox;
-  *prox = tmp;
+void swap(int *current, int *next){
+  int tmp = *current;
+  *current = *next;
+  *next = tmp;
 }
 
 int main(int argc, char const *argv[]){
@@ -16,33 +16,33 @@ int main(int argc, char const *argv[]){
   int TAM = sizeof(A)/sizeof(A)[0];
   int LIMIT = TAM - 1;
 
-  printf("\nListando os elementos:\n");
+  printf("\n👽 Listing the elements:\n");
 
   for (i = 0; i < TAM; i++){
-    if(A[i]) printf("\nO elemento tem o valor de %d", A[i]);
+    if(A[i]) printf("\n💀 The element has the value of %d", A[i]);
   }
-  
-  printf("\n\nListagem concluida...\n\n");  
 
-  printf("Apply Buuble Sort...\n\n");
+  printf("\n\n🤖 Listing completed...\n\n");
+
+  printf("👾 Apply bubble sort...\n\n");
 
   for(i = 0; i < LIMIT; i++){
     int LIMIT_PROX = LIMIT - i;
     for(j = 0; j < LIMIT_PROX; j++){
-      int atual = j, prox = j+ 1;
-      if(A[atual] > A[prox]){
-        swap(&A[atual], &A[prox]);
+      int current = j, next = j+ 1;
+      if(A[current] > A[next]){
+        swap(&A[current], &A[next]);
       }
     }
   }
 
-  printf("\nListando os elementos:\n");
+  printf("\n👽 Listing the elements:\n");
 
   for (i = 0; i < TAM; i++){
-    if(A[i]) printf("\nO elemento tem o valor de %d", A[i]);
+    if(A[i]) printf("\n💀 The element has the value of %d", A[i]);
   }
-  
-  printf("\n\nListagem concluida...\n\n");  
+
+  printf("\n\n🤖 Listing completed...\n\n");
 
   return 0;
 }

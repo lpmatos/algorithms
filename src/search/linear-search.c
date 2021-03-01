@@ -12,9 +12,7 @@ int main(int argc, char const *argv[]){
   bool found = false;
 
   printf("\nFilling the vector...\n");
-  for (i = 0; i < MAX; i++){
-    A[i] = i + 1;
-  }
+  for (i = 0; i < MAX; i++){ A[i] = i + 1;}
 
   printf("\nWhat value do you want to seek? ");
   scanf("%d", &valor);
@@ -28,9 +26,7 @@ int main(int argc, char const *argv[]){
     }
   }
 
-  if(!found){
-    printf("\n\nThe element %d wasn't found 👽...\n\n", valor);
-  }
+  if(!found){printf("\n\nThe element %d wasn't found 👽...\n\n", valor);}
 
   return 0;
 }
