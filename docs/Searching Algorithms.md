@@ -4,16 +4,20 @@
 
 Os algoritmos de busca são projetados para verificar ou recuperar um elemento de qualquer estrutura de dados onde ele está armazenado. 
 
-Com base no tipo de ordenação, esses algoritmos são classificados em duas categorias:
+Com base no tipo de ordenação esses algoritmos são classificados em duas categorias:
 
 - **Busca Sequencial**:
-  - Nesse tipo a estrutura de dados (`lista` ou `matriz`, por exemplo) é percorrida sequencialmente e cada elemento é verificado. Um tipo de busca dessa forma é a `busca linear`.
+  - Nesse tipo a estrutura de dados (`lista` ou `matriz`, por exemplo) é percorrida sequencialmente e cada elemento é verificado. 
+  - A `busca linear` é um exemplo.
+
 - **Busca de Intervalo**:
-  - Esses algoritmos são projetos especificamente para buscar em estruturas de dados classificadas. A busca nesse tipo de algoritmo é muito mais eficiente do que uma `busca linear`, uma vez que nela o centro da estrutura é visitado repetidamente, além do espaço de pesquisa ser divido pela metade. Um tipo de busca dessa forma é a `busca binária`.
+  - Esses algoritmos são projetos especificamente para buscar em estruturas de dados classificadas.
+  - A busca nesse tipo é muito mais eficiente do que em uma `busca linear`, uma vez que o centro da estrutura é visitado repetidamente, além do espaço de pesquisa ser divido pela metade. 
+  - A `busca binária` é um exemplo.
 
 ## Linear Search
 
-O problema da busca linear é: 
+O problema da `busca linear` é: 
 
 >
 > Dado um array de n elementos, escreva uma função para pesquisar um dado elemento `x` nesse array.
