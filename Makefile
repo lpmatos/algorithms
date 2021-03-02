@@ -25,12 +25,12 @@ help:
 	@echo "* "
 	@echo "* 📌 make global-requirements"
 	@echo "* 📌 make npm-requirements"
-	@echo "* 📌 make npm-version"
-	@echo "* 📌 make npm-install"
+	@echo "* 📌 make version"
+	@echo "* 📌 make install"
 	@echo "* 📌 make verify"
+	@echo "* 📌 make scan"
 	@echo "* 📌 make release-debug"
 	@echo "* 📌 make release"
-	@echo "* 📌 make scan"
 	@echo "* "
 	@echo "*  🎉 Docker commands 🎉"
 	@echo "* "
@@ -66,7 +66,7 @@ global-requirements:
 	@command -v git >/dev/null || ( echo "ERROR: 🆘 git binary not found. Exiting." && exit 1)
 	@echo "==> ✅ Global requirements are met!"
 
-npm-requirements:
+npm-requirements: global-requirements
 	@echo "==> 📜 Checking npm requirements..."
 	@command -v npm >/dev/null || ( echo "ERROR: 🆘 npm binary not found. Exiting." && exit 1)
 	@echo "==> ✅ Package requirements are met!"
@@ -75,24 +75,24 @@ scan: global-requirements
 	@echo "==> 🔒 Scan git repo for secrets..."
 	@gitleaks --verbose -c .gitleaks.toml
 
-npm-version: yarn-requirements
+version: npm-requirements
 	@echo "==> ✨ NPM version: $(shell npm --version)"
 
-npm-install:
+install: npm-requirements
 	@echo "==> 🔥 NPM install packages..."
 	@npm install
 
-verify: yarn-install
+verify:
 ifeq ($(GITHUB_TOKEN),)
 	@echo "ERROR: 🆘 no GITHUB TOKEN was provided - undefined variable. Exiting." && exit 1
 else
 	@echo "==> 🎊 We have a GITHUB TOKEN!"
 endif
 
-release-debug: verify
+release-debug: install verify
 	@echo "==> 📦 Runnig release debug..."
-	@yarn run release-debug
+	@npm run release-debug
 
-release: verify
+release: install verify
 	@echo "==> 📦 Runnig release..."
-	@yarn run release
+	@npm run release

@@ -5,25 +5,39 @@ root = true
 
 # Unix-style newlines with a newline ending every file
 [*]
-indent_size = 2
 tab_width = 2
-indent_style = space
-end_of_line = lf
-trim_trailing_whitespace = true
-insert_final_newline = true
 charset = utf-8
-
-# 4 space indentation
-[*.{py,java,r,R}]
+indent_size = 2
+end_of_line = lf
 indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[{*[Mm]akefile*,*.mak,*.mk,depend}]
+indent_style = tab
+
+# ================================================
+# 4 SPACE INDENTATION
+# ================================================
+[*.{py,java,r,R}]
+indent_size = 4
+indent_style = space
+
+[Dockerfile]
 indent_size = 4
 
-# 2 space indentation
-[*.{js,json,y{a,}ml,html,cwl}]
-indent_style = space
+[{go.mod,go.sum,*.go,.gitmodules}]
+indent_size = 4
+indent_style = tab
+
+# ================================================
+# 2 SPACE INDENTATION
+# ================================================
+[*.{js,json,y{a,}ml,html,css,cwl,rb,sh}]
 indent_size = 2
+indent_style = space
 
 [*.{md,Rmd,rst}]
-trim_trailing_whitespace = false
-indent_style = space
 indent_size = 2
+indent_style = space
+trim_trailing_whitespace = false

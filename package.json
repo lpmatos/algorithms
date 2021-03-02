@@ -1,11 +1,11 @@
 {
   "_comment": "this project is not a node.js one, package.json is just used to define some metadata",
   "scripts": {
+    "prepare": "husky install",
     "cm": "git cz",
     "secrets": "gitleaks --verbose -c .gitleaks.toml",
     "release": "npx semantic-release --no-ci",
     "release-debug": "npx semantic-release --dry-run --no-ci --debug",
-    "prepare": "husky install",
     "docker-build-test": "docker image build -t teste .",
     "docker-inspect": "npm run docker-build-test && dive teste --ci"
   },
