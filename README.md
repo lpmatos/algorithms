@@ -15,8 +15,8 @@
 
 ---
 
-<p align="center"> Few lines describing your project.
-    <br> 
+<p align="center">  
+  Simple repository with some algorithm implementations.
 </p>
 
 ## 📝 Table of Contents
