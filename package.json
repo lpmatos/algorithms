@@ -5,7 +5,7 @@
     "secrets": "gitleaks --verbose -c .gitleaks.toml",
     "release": "npx semantic-release --no-ci",
     "release-debug": "npx semantic-release --dry-run --no-ci --debug",
-    "prepare": "husky install .githooks/husky && npx husky add .githooks/husky/commit-msg 'npx --no-install commitlint --edit $1'",
+    "prepare": "husky install",
     "docker-build-test": "docker image build -t teste .",
     "docker-inspect": "npm run docker-build-test && dive teste --ci"
   },
