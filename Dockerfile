@@ -1,4 +1,4 @@
-FROM alpine:3.13.1
+FROM python:3.9.2-alpine3.12
 
 RUN apk update && apk add --no-cache bash gcc g++
 
