@@ -1,9 +1,8 @@
 <p align="center">
-  <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
+  <img alt="logo" src="https://i.imgur.com/6wj0hh6.jpg" width="350px" float="center"/>
 </p>
 
-<h3 align="center">Project Title</h3>
+<h3 align="center">Algoritmos</h3>
 
 <div align="center">
 
