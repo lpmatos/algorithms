@@ -4,13 +4,19 @@ MAKEFLAGS += --warn-undefined-variables
 SHELL := /usr/bin/env bash
 
 ##################################################
+# INCLUDES
+##################################################
+
+include helpers/docker.mk
+
+##################################################
 # HELPER
 ##################################################
 
 .PHONY: help
 help:
 	@echo ""
-	@echo "***************************"
+	@echo "***********************************"
 	@echo "* 🤖 Management commands"
 	@echo "* "
 	@echo "* Usage:"
@@ -27,8 +33,28 @@ help:
 	@echo "* 📌 make verify"
 	@echo "* 📌 make release-debug"
 	@echo "* 📌 make release"
+	@echo "* 📌 make scan"
 	@echo "* "
-	@echo "***************************"
+	@echo "*  🎉 Docker commands 🎉"
+	@echo "* "
+	@echo "* 📌 make ds   - docker-stop"
+	@echo "* 📌 make dr   - docker-remove"
+	@echo "* 📌 make dvp  - docker-volume-prune"
+	@echo "* 📌 make dnp  - docker-network-prune"
+	@echo "* 📌 make dsp  - docker-system-prune"
+	@echo "* 📌 make dc   - docker-clean"
+	@echo "* 📌 make ddc  - docker-deep-clean"
+	@echo "* "
+	@echo "*  🎉 Docker Compose commands 🎉"
+	@echo "* "
+	@echo "* 📌 make dcu  - compose-up"
+	@echo "* 📌 make dcub - compose-up-background"
+	@echo "* 📌 make dcd  - compose-down"
+	@echo "* 📌 make dcps - compose-ps"
+	@echo "* 📌 make dcr  - compose-run"
+	@echo "* 📌 make dcrb - compose-run-background"
+	@echo "* "
+	@echo "***********************************"
 	@echo ""
 
 ##################################################
@@ -79,3 +105,7 @@ release-debug: verify
 release: verify
 	@echo "==> 📦 Runnig release..."
 	@yarn run release
+
+scan: global-requirements
+	@echo "==> 🔒 Scan git repo for secrets..."
+	@gitleaks --verbose -c .gitleaks.toml
