@@ -3,11 +3,11 @@
   "scripts": {
     "cm": "git cz",
     "secrets": "gitleaks --verbose -c .gitleaks.toml",
-    "test": "docker image build -t teste .",
-    "dive": "npm run test && dive teste --ci",
     "release": "npx semantic-release --no-ci",
     "release-debug": "npx semantic-release --dry-run --no-ci --debug",
-    "prepare": "husky install .githooks/husky && npx husky add .githooks/husky/commit-msg 'npx --no-install commitlint --edit $1'"
+    "prepare": "husky install .githooks/husky && npx husky add .githooks/husky/commit-msg 'npx --no-install commitlint --edit $1'",
+    "docker-build-test": "docker image build -t teste .",
+    "docker-inspect": "npm run docker-build-test && dive teste --ci"
   },
   "commitlint": {
     "extends": [
