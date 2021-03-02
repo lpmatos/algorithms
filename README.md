@@ -21,6 +21,10 @@
 
 ---
 
+<p align="center">
+  <img alt="funny-gif" src="https://media3.giphy.com/media/3o6Yg4GUVgIUg3bf7W/giphy.gif" width="450px" float="center"/>
+</p>
+
 <p align="center">  
   Teoria e prática sobre os mais importantes algoritmos de Ciência da Computação.
 </p>
