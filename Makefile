@@ -24,9 +24,9 @@ help:
 	@echo "*  🎉 Short commands 🎉"
 	@echo "* "
 	@echo "* 📌 make global-requirements"
-	@echo "* 📌 make yarn-requirements"
-	@echo "* 📌 make yarn-version"
-	@echo "* 📌 make yarn-install"
+	@echo "* 📌 make npm-requirements"
+	@echo "* 📌 make npm-version"
+	@echo "* 📌 make npm-install"
 	@echo "* 📌 make verify"
 	@echo "* 📌 make release-debug"
 	@echo "* 📌 make release"
@@ -66,21 +66,21 @@ global-requirements:
 	@command -v git >/dev/null || ( echo "ERROR: 🆘 git binary not found. Exiting." && exit 1)
 	@echo "==> ✅ Global requirements are met!"
 
-yarn-requirements:
-	@echo "==> 📜 Checking yarn requirements..."
-	@command -v yarn >/dev/null || ( echo "ERROR: 🆘 yarn binary not found. Exiting." && exit 1)
+npm-requirements:
+	@echo "==> 📜 Checking npm requirements..."
+	@command -v npm >/dev/null || ( echo "ERROR: 🆘 npm binary not found. Exiting." && exit 1)
 	@echo "==> ✅ Package requirements are met!"
 
 scan: global-requirements
 	@echo "==> 🔒 Scan git repo for secrets..."
 	@gitleaks --verbose -c .gitleaks.toml
 
-yarn-version: yarn-requirements
-	@echo "==> ✨ Yarn version: $(shell yarn --version)"
+npm-version: yarn-requirements
+	@echo "==> ✨ NPM version: $(shell npm --version)"
 
-yarn-install:
-	@echo "==> 🔥 Yarn install packages..."
-	@yarn install
+npm-install:
+	@echo "==> 🔥 NPM install packages..."
+	@npm install
 
 verify: yarn-install
 ifeq ($(GITHUB_TOKEN),)
