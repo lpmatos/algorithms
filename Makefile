@@ -16,7 +16,7 @@ include helpers/docker.mk
 .PHONY: help
 help:
 	@echo ""
-	@echo "***********************************"
+	@echo "****************************************"
 	@echo "* 🤖 Management commands"
 	@echo "* "
 	@echo "* Usage:"
@@ -37,6 +37,7 @@ help:
 	@echo "* "
 	@echo "*  🎉 Docker commands 🎉"
 	@echo "* "
+	@echo "* 📌 make docker-requirements"
 	@echo "* 📌 make ds   - docker-stop"
 	@echo "* 📌 make dr   - docker-remove"
 	@echo "* 📌 make dvp  - docker-volume-prune"
@@ -47,6 +48,7 @@ help:
 	@echo "* "
 	@echo "*  🎉 Docker Compose commands 🎉"
 	@echo "* "
+	@echo "* 📌 make docker-compose-requirements"
 	@echo "* 📌 make dcu  - compose-up"
 	@echo "* 📌 make dcub - compose-up-background"
 	@echo "* 📌 make dcd  - compose-down"
@@ -54,7 +56,7 @@ help:
 	@echo "* 📌 make dcr  - compose-run"
 	@echo "* 📌 make dcrb - compose-run-background"
 	@echo "* "
-	@echo "***********************************"
+	@echo "****************************************"
 	@echo ""
 
 ##################################################
@@ -76,6 +78,10 @@ npm-requirements:
 	@echo "==> 📜 Checking npm requirements..."
 	@command -v npm >/dev/null || ( echo "ERROR: 🆘 npm binary not found. Exiting." && exit 1)
 	@echo "==> ✅ Package requirements are met!"
+
+scan: global-requirements
+	@echo "==> 🔒 Scan git repo for secrets..."
+	@gitleaks --verbose -c .gitleaks.toml
 
 yarn-version: yarn-requirements
 	@echo "==> ✨ Yarn version: $(shell yarn --version)"
@@ -105,7 +111,3 @@ release-debug: verify
 release: verify
 	@echo "==> 📦 Runnig release..."
 	@yarn run release
-
-scan: global-requirements
-	@echo "==> 🔒 Scan git repo for secrets..."
-	@gitleaks --verbose -c .gitleaks.toml
