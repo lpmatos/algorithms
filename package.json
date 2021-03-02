@@ -5,7 +5,8 @@
     "secrets": "gitleaks --verbose -c .gitleaks.toml",
     "dive": "dive build .",
     "release": "npx semantic-release --no-ci",
-    "release-debug": "npx semantic-release --dry-run --no-ci --debug"
+    "release-debug": "npx semantic-release --dry-run --no-ci --debug",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
@@ -23,8 +24,8 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/exec": "^5.0.0",
@@ -32,7 +33,7 @@
     "@semantic-release/github": "^7.2.0",
     "@semantic-release/release-notes-generator": "^9.0.1",
     "commitizen": "^4.2.3",
-    "husky": "^4.3.8",
-    "semantic-release": "^17.3.7"
+    "husky": "^5.1.3",
+    "semantic-release": "^17.4.0"
   }
 }
