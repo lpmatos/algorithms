@@ -26,7 +26,7 @@
 </p>
 
 <p align="center">  
-  Teoria e prática sobre os mais importantes algoritmos de Ciência da Computação.
+  Teoria e implementação dos mais importantes algoritmos abordados no curso de Ciência da Computação.
 </p>
 
 ## 📝 Table of Contents
