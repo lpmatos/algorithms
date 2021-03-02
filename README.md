@@ -2,7 +2,7 @@
   <img alt="logo" src="https://guiatech.net/wp-content/uploads/2018/01/algoritmos-1.jpg" width="350px" float="center"/>
 </p>
 
-<h3 align="center">Algorithms</h3>
+<h3 align="center">Estudo sobre Algoritmos</h3>
 
 <div align="center">
 
@@ -16,7 +16,7 @@
 ---
 
 <p align="center">  
-  Simple repository with some algorithm implementations.
+  Teoria e prática sobre os mais importantes algoritmos de Ciência da Computação.
 </p>
 
 ## 📝 Table of Contents
