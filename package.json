@@ -9,11 +9,6 @@
     "release-debug": "npx semantic-release --dry-run --no-ci --debug",
     "prepare": "husky install .githooks/husky && npx husky add .githooks/husky/commit-msg 'npx --no-install commitlint --edit $1'"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
