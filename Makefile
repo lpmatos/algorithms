@@ -25,11 +25,8 @@ help:
 	@echo "* "
 	@echo "* 📌 make global-requirements"
 	@echo "* 📌 make yarn-requirements"
-	@echo "* 📌 make npm-requirements"
 	@echo "* 📌 make yarn-version"
-	@echo "* 📌 make npm-version"
 	@echo "* 📌 make yarn-install"
-	@echo "* 📌 make npm-install"
 	@echo "* 📌 make verify"
 	@echo "* 📌 make release-debug"
 	@echo "* 📌 make release"
@@ -74,11 +71,6 @@ yarn-requirements:
 	@command -v yarn >/dev/null || ( echo "ERROR: 🆘 yarn binary not found. Exiting." && exit 1)
 	@echo "==> ✅ Package requirements are met!"
 
-npm-requirements:
-	@echo "==> 📜 Checking npm requirements..."
-	@command -v npm >/dev/null || ( echo "ERROR: 🆘 npm binary not found. Exiting." && exit 1)
-	@echo "==> ✅ Package requirements are met!"
-
 scan: global-requirements
 	@echo "==> 🔒 Scan git repo for secrets..."
 	@gitleaks --verbose -c .gitleaks.toml
@@ -86,16 +78,9 @@ scan: global-requirements
 yarn-version: yarn-requirements
 	@echo "==> ✨ Yarn version: $(shell yarn --version)"
 
-npm-version: npm-requirements
-	@echo "==> ✨ NPM version: $(shell npm --version)"
-
 yarn-install:
 	@echo "==> 🔥 Yarn install packages..."
 	@yarn install
-
-npm-install:
-	@echo "==> 🔥 NPM install packages..."
-	@npm install
 
 verify: yarn-install
 ifeq ($(GITHUB_TOKEN),)
