@@ -16,6 +16,7 @@
 [![GitHub Issues](https://img.shields.io/github/issues/lpmatos/algorithms.svg)](https://github.com/lpmatos/algorithms/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/lpmatos/algorithms.svg)](https://github.com/lpmatos/algorithms/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+[![OSSAR](https://github.com/lpmatos/algorithms/actions/workflows/ossar-analysis.yml/badge.svg?branch=main)](https://github.com/lpmatos/algorithms/actions/workflows/ossar-analysis.yml)
 
 </div>
 
