@@ -1,19 +1,25 @@
 # http://editorconfig.org
 
-# stop recursing upwards for other .editorconfig files
+# This is the project's root directory
 root = true
 
 # Unix-style newlines with a newline ending every file
 [*]
-tab_width = 2
+# The files are utf-8 encoded
 charset = utf-8
+# Each indent should contain 2 spaces
 indent_size = 2
+# Use Unix line endings
 end_of_line = lf
+# Use spaces for indentation
 indent_style = space
+# A file must end with an empty line - this is good for version control systems
 insert_final_newline = true
+# No whitespace at the end of line
 trim_trailing_whitespace = true
 
-[{*[Mm]akefile*,*.mak,*.mk,depend}]
+[{Makefile,**.mk}]
+# Use tabs for indentation (Makefiles require tabs)
 indent_style = tab
 
 # ================================================

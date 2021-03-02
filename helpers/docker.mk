@@ -1,13 +1,11 @@
 # ================================================
 # DOCKER VARIABLES
 # ================================================
-
 DOCKER_CONTAINER_LIST := $(shell docker ps -aq)
 
 # ================================================
 # DOCKER SHORTCUTS
 # ================================================
-
 docker-requirements:
 	@echo "==> 🌐 Checking docker requirements..."
 	@command -v docker >/dev/null || ( echo "ERROR: 🆘 Docker binary not found. Exiting." && exit 1)
@@ -44,7 +42,6 @@ ddc: ds dr dvp dnp dsp
 # ================================================
 # DOCKER COMPOSE SHORTCUTS
 # ================================================
-
 docker-compose-requirements:
 	@echo "==> 🌐 Checking docker compose requirements..."
 	@command -v docker-compose >/dev/null || ( echo "ERROR: 🆘 Docker Compose binary not found. Exiting." && exit 1)
