@@ -45,9 +45,9 @@
 
 ## ➤ Docs
 
-- [🗲 Algoritmos de Busca](./docs/Algoritmos de Busca.md)
-- [🗲 Busca Linear x Busca Binary](./docs/Busca Linear x Busca Binary.md)
-- [🗲 Dividir para Conquistar](./docs/Dividir para Conquistar.md)
+- [🗲 Algoritmos de Busca](docs/Algoritmos de Busca.md)
+- [🗲 Busca Linear x Busca Binary](docs/Busca Linear x Busca Binary.md)
+- [🗲 Dividir para Conquistar](docs/Dividir para Conquistar.md)
 
 ## ➤ Versioning
 
