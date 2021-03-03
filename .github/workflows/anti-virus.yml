@@ -1,12 +1,31 @@
 name: Gitavscan
 
-on: [push,pull_request]
+# Trigger the workflow on push or pull request, but only for the main branch
+#
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
+# Run ClamAV antivurs - https://www.clamav.net
+#
 jobs:
   gitavscan:
-    runs-on: ubuntu-latest
-    name: AV scan
+    name: ClamAV scan
+
+    strategy:
+      matrix:
+        os: [ubuntu-20.04]
+
+    runs-on: ${{ matrix.os }}
+
     steps:
-    - uses: actions/checkout@v2
-    - name: Git AV Scan
-      uses: djdefi/gitavscan@main
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run ClamAV scan action
+        uses: djdefi/gitavscan@main
+        continue-on-error: false

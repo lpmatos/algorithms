@@ -1,20 +1,44 @@
 name: Lint Commit Messages
 
-on: [push,pull_request]
+# Trigger the workflow on push or pull request, but only for the main branch
+#
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
+# Run commit lint with convention commits pattern
+#
 jobs:
   commitlint:
-    runs-on: ubuntu-latest
+    name: Commit Lint
+
+    strategy:
+      matrix:
+        os: [ubuntu-20.04]
+
+    runs-on: ${{ matrix.os }}
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v1
+
+      - name: Setup node
+        uses: actions/setup-node@v1
         with:
-          node-version: '14'
-      - run: npm install
-      # Run the commitlint action, considering its own dependencies and yours as well 🚀
-      # `github.workspace` is the path to your repository.
-      - uses: wagoid/commitlint-github-action@v3
+          node-version: "14"
+
+      - name: Install dependencies
+        run: npm install
+        continue-on-error: false
+
+      - name: Run commit lint action
+        uses: wagoid/commitlint-github-action@v3
         env:
           NODE_PATH: ${{ github.workspace }}/node_modules
+        continue-on-error: false

@@ -1,15 +1,31 @@
 name: Gitleaks
 
-on: [push,pull_request]
+# Trigger the workflow on push or pull request, but only for the main branch.
+#
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   gitleaks:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-20.04]
+
+    runs-on: ${{ matrix.os }}
+
     steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: '0'
-    - name: gitleaks-action
-      uses: zricethezav/gitleaks-action@master
-      with:
-        config-path: .gitleaks.toml
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Run gitleaks action
+        uses: zricethezav/gitleaks-action@master
+        with:
+          config-path: .gitleaks.toml
+        continue-on-error: false
