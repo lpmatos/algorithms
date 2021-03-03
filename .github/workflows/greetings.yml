@@ -1,13 +1,24 @@
 name: Greetings
 
-on: [pull_request, issues]
+# Trigger the workflow on issues or pull request, but only for the main branch.
+#
+on:
+  issues:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   greeting:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-20.04]
+
+    runs-on: ${{ matrix.os }}
+
     steps:
     - uses: actions/first-interaction@v1
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: '🎉 Message that will be displayed on users first issue'
-        pr-message: '🎉 Message that will be displayed on users first pull request'
+        issue-message: '🎉 Were glad youve reported a issue. I hope that your contribution can elevate our community.'
+        pr-message: '🎉 Were glad youve make a pull-request. I hope that your contribution can elevate our community.'

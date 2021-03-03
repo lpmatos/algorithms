@@ -19,11 +19,13 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: '0'
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
-    - name: gitleaks-action
-      uses: zricethezav/gitleaks-action@master
-      with:
-        config-path: .gitleaks.toml
+      - name: Run gitleaks action
+        uses: zricethezav/gitleaks-action@master
+        with:
+          config-path: .gitleaks.toml
+        continue-on-error: false
