@@ -14,7 +14,7 @@ on:
 #
 jobs:
   gitavscan:
-    name: AV scan
+    name: ClamAV scan
 
     strategy:
       matrix:
@@ -26,6 +26,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Git AV Scan
+      - name: Git ClamAV scan
         uses: djdefi/gitavscan@main
         continue-on-error: false

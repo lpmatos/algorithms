@@ -28,14 +28,15 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node
+      - name: Setup node
         uses: actions/setup-node@v1
         with:
           node-version: "14"
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - uses: wagoid/commitlint-github-action@v2
+      - name: Run commit lint
+        uses: wagoid/commitlint-github-action@v2
         env:
           NODE_PATH: ${{ github.workspace }}/node_modules
