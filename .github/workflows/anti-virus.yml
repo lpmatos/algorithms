@@ -1,4 +1,4 @@
-name: Gitavscan
+name: AntiVirus
 
 # Trigger the workflow on push or pull request, but only for the main branch
 #
@@ -13,8 +13,8 @@ on:
 # Run ClamAV antivurs - https://www.clamav.net
 #
 jobs:
-  gitavscan:
-    name: ClamAV scan
+  antivurs:
+    name: ClamAV antivurs scan
 
     strategy:
       matrix:
@@ -26,6 +26,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Run ClamAV scan action
+      - name: Run ClamAV antivurs scan action
         uses: djdefi/gitavscan@main
         continue-on-error: false

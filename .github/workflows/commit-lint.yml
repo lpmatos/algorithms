@@ -33,7 +33,7 @@ jobs:
         with:
           node-version: "14"
 
-      - name: Install dependencies
+      - name: Install node dependencies
         run: npm install
         continue-on-error: false
 

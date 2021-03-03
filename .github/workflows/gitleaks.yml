@@ -12,6 +12,8 @@ on:
 
 jobs:
   gitleaks:
+    name: GitLeaks
+
     strategy:
       matrix:
         os: [ubuntu-20.04]
