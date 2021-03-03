@@ -43,6 +43,16 @@
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
+## ➤ Docs
+
+- [🗲 Algoritmos de Busca](./docs/Algoritmos de Busca.md)
+- [🗲 Busca Linear x Busca Binary](./docs/Busca Linear x Busca Binary.md)
+- [🗲 Dividir para Conquistar](./docs/Dividir para Conquistar.md)
+
+## ➤ Versioning
+
+[**CHANGELOG.md**](CHANGELOG.md)
+
 ## 🧐 About <a name = "about"></a>
 
 Write about 1-2 paragraphs describing the purpose of your project.

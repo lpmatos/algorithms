@@ -13,7 +13,9 @@ Os algoritmos de busca têm como objetivo verificar ou recuperar um elemento de 
 
 ## O problema de busca
 
-Imagine um vetor de alunos, sendo que aluno é um registro com os campos matrícula, nome e curso. Como você faria para localizar um determinado aluno? O objetivo da busca (ou pesquisa) é encontrar uma ou mais ocorrências de registros com valores iguais ao valor procurado. Existem vários métodos de pesquisa e a escolha do método mais adequado depende, principalmente:
+Imagine um vetor de alunos, sendo que aluno é um registro com os campos matrícula, nome e curso. Como você faria para localizar um determinado aluno? 
+
+O objetivo da busca (ou pesquisa) é encontrar uma ou mais ocorrências de registros com valores iguais ao valor procurado. Existem vários métodos de pesquisa e a escolha do método mais adequado depende, principalmente:
 
 - Da quantidade de dados envolvidos.
 - Da possibilidade de o arquivo sofrer inserções e/ou retiradas.
