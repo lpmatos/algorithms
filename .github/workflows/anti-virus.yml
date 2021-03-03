@@ -26,6 +26,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Git ClamAV scan
+      - name: Run ClamAV scan action
         uses: djdefi/gitavscan@main
         continue-on-error: false
