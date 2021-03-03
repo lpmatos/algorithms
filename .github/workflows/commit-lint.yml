@@ -1,4 +1,4 @@
-name: Lint Commit Messages
+name: Commit Lint
 
 # Trigger the workflow on push or pull request, but only for the main branch
 #
