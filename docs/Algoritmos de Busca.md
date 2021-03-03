@@ -2,23 +2,28 @@
 
 ## Overview
 
-Os algoritmos de busca têm como objetivo verificar ou recuperar um elemento de qualquer estrutura de dados onde ele está armazenado. Com base no tipo de ordenação esses algoritmos são classificados em duas categorias:
+Os algoritmos de busca têm como objetivo verificar ou recuperar um elemento de qualquer estrutura de dados. Com base no tipo de ordenação esses algoritmos são classificados em duas categorias:
 
 - **Busca Sequencial**:
-  - Nesse tipo a estrutura de dados (`lista` ou `matriz`, por exemplo) é percorrida sequencialmente e cada elemento é verificado. 
-  - A `busca linear` é um exemplo.
+  - Nesse tipo a estrutura de dados (`lista` ou `matriz`, por exemplo) é percorrida sequencialmente e cada elemento é verificado. A `busca linear` é um exemplo.
 
 - **Busca por Intervalo**:
-  - Esses algoritmos são projetos especificamente para buscar em estruturas de dados classificadas.
-  - A busca nesse tipo é muito mais eficiente do que em uma `busca linear`, uma vez que o centro da estrutura é visitado repetidamente, além do espaço de pesquisa ser divido pela metade. 
-  - A `busca binária` é um exemplo.
+  - Esses algoritmos são projetos especificamente para buscar em estruturas de dados classificadas (ordenadas).
+  - Sua performance é muito mais eficiente do que a `busca linear`, uma vez que o centro da estrutura é visitado repetidamente, além do espaço de pesquisa ser divido pela metade. A `busca binária` é um exemplo.
+
+## O problema de busca
+
+Imagine um vetor de alunos, sendo que aluno é um registro com os campos matrícula, nome e curso. Como você faria para localizar um determinado aluno? O objetivo da busca (ou pesquisa) é encontrar uma ou mais ocorrências de registros com valores iguais ao valor procurado. Existem vários métodos de pesquisa e a escolha do método mais adequado depende, principalmente:
+
+- Da quantidade de dados envolvidos.
+- Da possibilidade de o arquivo sofrer inserções e/ou retiradas.
 
 ## Linear Search
 
 Vamos supor que temos o seguinte problema:
 
 >
-> Dado um array de `n` elementos, escreva uma função para buscar um elemento `x` nesse array.
+> Dado um array de `n` elementos, escreva uma função para buscar um elemento `x` desse array.
 >
 
 Uma abordagem simples para resolver esse problema é fazer uma `busca linear`, ou seja:
@@ -26,6 +31,8 @@ Uma abordagem simples para resolver esse problema é fazer uma `busca linear`, o
 - Comece a partir do elemento mais à esquerda do array e, um por um, compare esse elemento com cada elemento subsequente até o último índice do array.
 - Se `x` corresponder ao elemento, retorne o índice.
 - Se `x` não corresponder a nenhum dos elementos, retorne `-1`.
+
+Esse método de pesquisa é o mais simples que existe.
 
 <p align="center">
  <img src="./assets/Linear-Search.png" alt="linear-search"></a>
@@ -54,6 +61,8 @@ Na `busca binária` fazemos:
 - Comece com um intervalo cobrindo todo o array.
 - Se o valor da chave de pesquisa for menor que o item no meio do intervalo, restrinja o intervalo à metade inferior. Caso contrário, estreite-o até a metade superior.
 - Verifique repeditamente até que o valor seja encontrado ou o intervalo esteja vazio.
+
+Esse método de busca é eficiente para um vetor ordenado. Podemos dizer que ele é semelhante ao método que usávamos para procurar uma palabra no dicionário.
 
 <p align="center">
  <img src="./assets/Binary-Search.png" alt="binary-search"></a>

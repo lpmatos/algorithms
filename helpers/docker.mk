@@ -9,7 +9,6 @@ DOCKER_CONTAINER_LIST := $(shell docker ps -aq)
 docker-requirements:
 	@echo "==> 🌐 Checking docker requirements..."
 	@command -v docker >/dev/null || ( echo "ERROR: 🆘 Docker binary not found. Exiting." && exit 1)
-	@docker info >/dev/null || ( echo "ERROR: 🆘 command "docker info" is in error. Exiting." && exit 1)
 	@echo "==> ✅ Docker requirements are met!"
 
 ds: docker-requirements
