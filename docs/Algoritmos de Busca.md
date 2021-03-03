@@ -1,16 +1,14 @@
-# Searching Algorithms
+# Falando um pouco sobre Algoritmos de Busca
 
 ## Overview
 
-Os algoritmos de busca são projetados para verificar ou recuperar um elemento de qualquer estrutura de dados onde ele está armazenado. 
-
-Com base no tipo de ordenação esses algoritmos são classificados em duas categorias:
+Os algoritmos de busca têm como objetivo verificar ou recuperar um elemento de qualquer estrutura de dados onde ele está armazenado. Com base no tipo de ordenação esses algoritmos são classificados em duas categorias:
 
 - **Busca Sequencial**:
   - Nesse tipo a estrutura de dados (`lista` ou `matriz`, por exemplo) é percorrida sequencialmente e cada elemento é verificado. 
   - A `busca linear` é um exemplo.
 
-- **Busca de Intervalo**:
+- **Busca por Intervalo**:
   - Esses algoritmos são projetos especificamente para buscar em estruturas de dados classificadas.
   - A busca nesse tipo é muito mais eficiente do que em uma `busca linear`, uma vez que o centro da estrutura é visitado repetidamente, além do espaço de pesquisa ser divido pela metade. 
   - A `busca binária` é um exemplo.
