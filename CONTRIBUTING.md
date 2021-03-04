@@ -4,9 +4,9 @@ Primeiramente, obrigado 🎉! É muito gratificante saber que podemos contar com
 
 ## ➤ Overview
 
-Nosso objetivo aqui é gerar valor para o processo de desenvolvimento de projetos com múltiplas participações. Pensando nisso, temos um documento de contribuição para abordarmos as melhores práticas a serem seguidas durante o processo de trabalho nesse projeto. 
+Como estamos tratando de um desenvolvimento colaborativo, a padronização é algo que mais cedo ou mais tarde vai acontecer. Definir um padrão de trabalho mostra o quão maduro um time vai estar para colaborar e consequentemente colher os frutos dessa maturidade (o bônus que temos com isso é enorme).
 
-Nesse documento definimos o passo a passo de contribução para qualquer novo contribuidor. Ainda estamos em faze de homologação, portanto não é o documento final. Esperamos que todos possam ajudar nessa evolução 🤗!
+Nosso objetivo aqui é gerar valor para projetos com múltiplas participações. Pensando nisso, temos um documento de contribuição para abordarmos as melhores práticas a serem seguidas durante o processo de desenvolvimento. Nesse documento definimos o passo a passo de contribução para qualquer novo contribuidor. Esperamos que todos possam ajudar nessa evolução 🤗!
 
 ## ➤ Menus
 
@@ -28,13 +28,12 @@ Nesse documento definimos o passo a passo de contribução para qualquer novo co
 
 ## ➤ Tools, Packages and Conventions
 
-Como estamos tratando de um desenvolvimento colaborativo, a padronização é algo que mais cedo ou mais tarde vai acontecer. Definir esse padrão mostra o quão maduro um time vai estar para colaborar e consequentemente isso será refletido em todo o processo de trabalho. O bônus que temos com isso é enorme e poderemos colher esse fruto em toda a cadeia de desenvolvimento da aplicação.
-
-Ao iniciar qualquer commit para esse repositório é de extrema importância que o contribuidor saiba o que ele precisa refletir em seu ambiente local para a sua contribução seguir os guidelines de padronização. Portanto, aqui listamos todas as ferramentas, pacotes e padrões utilizados como padrão nesse projeto.
+Ao iniciar qualquer commit para esse repositório é de extrema importância que o contribuidor saiba o que ele precisa refletir em seu ambiente local para a sua contribução seguir as nossas diretrizes. Portanto, nesse tópico listamos todas as ferramentas, pacotes e padrões utilizados nesse projeto.
 
 ### Tools
 
 - ⮚ Gerenciador de pacotes [NPM](https://www.npmjs.com/get-npm) ou [Yarn](https://yarnpkg.com/getting-started/install) para instação das dependências de suporte.
+  - Este projeto não é um projeto node.js. O package.json é usado apenas para definir alguns metadados e dependências de suporte para o nosso workflow.
 - ⮚ Automatizador de tarefas locais [make](https://www.gnu.org/software/make/manual/make.html).
 - ⮚ Scan de segredos [GitLeaks](https://github.com/zricethezav/gitleaks).
 
@@ -47,7 +46,7 @@ Ao iniciar qualquer commit para esse repositório é de extrema importância que
   - [`@semantic-release/changelog`](https://github.com/semantic-release/changelog)
   - [`@semantic-release/commit-analyzer`](https://github.com/semantic-release/commit-analyzer)
   - [`@semantic-release/release-notes-generator`](https://github.com/semantic-release/release-notes-generator)
-- ⮚ [Commitlint](https://github.com/conventional-changelog/commitlint) usando [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+- ⮚ [Commit Lint](https://github.com/conventional-changelog/commitlint) usando o [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
   - [`commitizen`](https://github.com/commitizen/cz-cli)
   - [`@commitlint/cli`](https://github.com/conventional-changelog/commitlint)
   - [`@commitlint/config-conventional`](https://github.com/conventional-changelog/commitlint)
@@ -63,15 +62,18 @@ Ao iniciar qualquer commit para esse repositório é de extrema importância que
 
 Para garantir a consistência do nosso código fonte, lembre-se de seguir essas regras enquanto trabalhar:
 
-- ⮚ Antes de iniciar o desenvolvimento se certifique de instalar todas as ferramentas abordadas na seção [Tools, Packages and Conventions](#-tools-packages-and-patterns).
-- ⮚ Todos as **features** ou **fixs** (correções de bugs) **devem ser testados**!
+- ⮚ Antes de iniciar o desenvolvimento certifique-se de instalar todas as ferramentas abordadas na seção [Tools, Packages and Conventions](#-tools-packages-and-patterns).
+- ⮚ Todos as **features** ou **fixs** (correções de bugs) **devem ser testadas**!
 - ⮚ A pipeline deve possui um status de sucesso antes de qualquer **merge-request** ser aprovado. Caso contrário, o código não é mesclado em seu branch alvo.
-- ⮚ Todas as **features** são criadas a partir da branch **develop**, possuindo curta duração e sendo mescladas novamente em **develop** assim que o **merge-request** for aprovado.
-- ⮚ Certifique-se de dar um `git rebase` antes de mesclar sua **feature** em **develop**, isso vai evitar possíveis conflitos, além de gerar um histórico linear das modificações.
+- ⮚ Todas as **features** são criadas a partir da branch **develop**, possuindo curta duração e sendo mescladas novamente em **develop**.
+- ⮚ Certifique-se de dar um `git rebase` antes de mesclar sua **feature** em **develop**, isso vai evitar possíveis conflitos além de gerar um histórico linear das modificações.
 - ⮚ Faça um `git squash` dos commits, isso é uma boa prática para manter um histórico de commits mais limpo.
-- ⮚ Ao abrir um **merge-request**, certifique-se de comunicar os maintainer-owners do projeto.
+- ⮚ Ao abrir um **merge-request**, certifique-se de comunicar os maintainers-owners do projeto e cascatear para os outros time (SRE, Plataforma...)
 - ⮚ Teste suas mudanças.
-  - Ao criar um **merge-request**, nosso CI executará a pipeline para validar suas mudanças. Nenhuma alteração será aprovada caso a pipeline não seja bem sucedida. É vital que a branch **master** e qualquer outra branch de entrega, passe nos testes o tempo todo, caso contrário nada será aprovado. Sempre que possível adicione testes adicionais para garantir que seu código fique o melhor possível.
+  - Ao criar um **merge-request** nosso CI executará a pipeline para validar suas mudanças. 
+  - Nenhuma alteração será aprovada caso a pipeline não seja bem sucedida. 
+  - É vital que a branch **master** e qualquer outra branch de entrega, passe nos testes o tempo todo, caso contrário nada será aprovado. 
+  - Sempre que possível adicione testes adicionais para garantir que seu código fique o melhor possível.
 - ⮚ Caso queira promover seu código para um ambiente de release, abra um merge-request para a branch **release**.
 
 ## ➤ Submission Guidelines
@@ -179,11 +181,11 @@ cz-cli@4.0.3, cz-conventional-changelog@3.2.0
 
 ## ➤ Release Steps
 
-1. Install all required tools.
-2. Setup your GitLab Token on Bash.
-3. Run make release-debug
-4. Run git commit `git commit -am "chore: bump version file"`
-5. Run make release
+1. Instale as ferramentas de suporte abordadas na seção [Tools, Packages and Conventions](#-tools-packages-and-patterns).
+2. Configure seu GitLab Token no seu Bash.
+3. Rode o comando `make release-debug`.
+4. Rode o comand `git commit -am "chore: bump version file"`
+5. Rode o comand `make release`
 6. Run `git pull --all && git pull --tags`
 
 ```bash
