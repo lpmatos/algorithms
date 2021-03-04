@@ -14,7 +14,7 @@ Podemos dividir a eficiência algorítmica em dois grupos:
 
 ## ➤ Tamanho da entrada 
 
-Quanto maior é a entrada para um algoritmo, mais tempo ele irá demorar para executar. Um exemplo é resolver um algoritmo que tenha que percorrer sequencialmente um vetor de 10 ou 1000 elementos.
+Quanto maior é a entrada para um algoritmo, mais tempo ele irá demorar para executar. Um exemplo que podemos dar é a resolução de um algoritmo que tenha que percorrer sequencialmente um vetor de 10 ou 1000 elementos. Sem sombra de dúvidas o vetor de 10 elementos vai demorar menos para ser executado.
 
 Em geral, a eficiência do algoritmo é analisada em função do tamanho da sua entrada. Exemplo: ordenação, buscar, encontrar o menor elemento, etc.
 
