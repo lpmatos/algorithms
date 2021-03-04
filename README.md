@@ -35,6 +35,8 @@
 
 The objective of this project is the theoretical and practical study of some algorithms presented in the computer course.
 
+---
+
 ## ➤ Getting Started <a name = "getting-started"></a>
 
 If you want to contribute, first you need to do a **git clone** of the repo:
@@ -75,6 +77,8 @@ This shareable configuration use the following dependencies:
 
 For more information, access the [CONTRIBUTING](CONTRIBUTING.md) file.
 
+---
+
 ## ➤ Development with Docker
 
 
@@ -112,6 +116,8 @@ winpty docker.exe container run -it --rm <IMAGE_NAME> <COMMAND>
 </p>
 </details>
 
+---
+
 ## ➤ Docs <a name = "docs"></a>
 
 - [🗲 Algoritmos de Busca](./docs/Algoritmos-de-Busca.md)
@@ -119,9 +125,13 @@ winpty docker.exe container run -it --rm <IMAGE_NAME> <COMMAND>
 - [🗲 Comparação de Algoritmos](./docs/Comparacao-de-Algoritmos.md)
 - [🗲 Dividir para Conquistar](./docs/Dividir-para-Conquistar.md)
 
+---
+
 ## ➤ License <a name = "license"></a>
 
 This project is distributed under the MIT License. See [LICENSE](LICENSE) file for more information.
+
+---
 
 ## ➤ Versioning <a name = "versioning"></a>
 
@@ -141,9 +151,13 @@ Hey!! If you like this project or if you find some bugs feel free to contact me 
 > * LinkedIn: [@luccapessoa](https://www.linkedin.com/in/luccapessoa/)
 >
 
+---
+
 ## ➤ Troubleshooting <a name = "troubleshooting"></a>
 
 This is just a personal project created for study/demonstration purposes and to simplify my working life, it may or may not be a good fit for your project!
+
+---
 
 ## ➤ Show your support <a name = "show-your-support"></a>
 
