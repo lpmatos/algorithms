@@ -2,7 +2,7 @@
   <img alt="logo" src="https://guiatech.net/wp-content/uploads/2018/01/algoritmos-1.jpg" width="350px" float="center"/>
 </p>
 
-<h3 align="center">👨‍💻 Algorithms study repository 👨‍💻</h3>
+<h3 align="center">👨‍💻 Algorithms study repo 👨‍💻</h3>
 
 <div align="center">
 
@@ -28,7 +28,7 @@
 </p>
 
 <p align="center">  
-  Theory and implementation of a few computer science algorithms for fun 👻 and study 🎒!
+  Theory and implementation of a few computer science algorithms for fun and study!
 </p>
 
 <p align="center">
@@ -52,7 +52,6 @@ If you want to contribute, first you need to do a **git clone** of the repo:
 
 This will give you access to the code on your **local machine**.
 
-
 ### Prerequisites
 
 Before you start developing on this project you need to configure some tools on your local machine:
@@ -74,6 +73,43 @@ npm install
 ```
 
 For more information, access the [CONTRIBUTING](CONTRIBUTING.md) file.
+
+## ➤ Development with Docker
+
+
+Steps to build the docker image:
+
+<details><summary>🐋 Build</summary>
+<p>
+
+Docker commands to build your image:
+
+```bash
+docker image build -t <IMAGE_NAME> -f <PATH_DOCKERFILE> <PATH_CONTEXT_DOCKERFILE>
+docker image build -t <IMAGE_NAME> . (This context)
+```
+</p>
+</details>
+
+<details><summary>🐋 Run</summary>
+<p>
+
+Docker commands to run a container with yout image:
+
+* **Linux** running:
+
+```bash
+docker container run -d -p <LOCAL_PORT:CONTAINER_PORT> <IMAGE_NAME> <COMMAND>
+docker container run -it --rm --name <CONTAINER_NAME> -p <LOCAL_PORT:CONTAINER_PORT> <IMAGE_NAME> <COMMAND>
+```
+
+* **Windows** running:
+
+```bash
+winpty docker.exe container run -it --rm <IMAGE_NAME> <COMMAND>
+```
+</p>
+</details>
 
 ## ➤ Docs <a name = "docs"></a>
 
@@ -106,7 +142,7 @@ Hey!! If you like this project or if you find some bugs feel free to contact me 
 
 ## ➤ Troubleshooting <a name = "troubleshooting"></a>
 
-🚨 This is just a personal project created for study/demonstration purposes and to simplify my working life, it may or may not be a good fit for your project!
+This is just a personal project created for study/demonstration purposes and to simplify my working life, it may or may not be a good fit for your project!
 
 ## ➤ Show your support <a name = "show-your-support"></a>
 
