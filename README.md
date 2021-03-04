@@ -137,6 +137,8 @@ This project is distributed under the MIT License. See [LICENSE](LICENSE) file f
 
 [**CHANGELOG.md**](CHANGELOG.md)
 
+---
+
 ## ➤ Author <a name = "author"></a>
 
 👤 **Lucca Pessoa**
