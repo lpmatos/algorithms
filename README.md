@@ -65,6 +65,14 @@ To install support dependencies that handle commit and release standards, run th
 npm install
 ```
 
+This shareable configuration use the following dependencies:
+
+- [`@semantic-release/git`](https://github.com/semantic-release/git)
+- [`@semantic-release/github`](https://github.com/semantic-release/github)
+- [`@semantic-release/changelog`](https://github.com/semantic-release/changelog)
+- [`@semantic-release/commit-analyzer`](https://github.com/semantic-release/commit-analyzer)
+- [`@semantic-release/release-notes-generator`](https://github.com/semantic-release/release-notes-generator)
+
 For more information, access the [CONTRIBUTING](CONTRIBUTING.md) file.
 
 ## ➤ Development with Docker
