@@ -2,8 +2,6 @@
 #define sizeOfArray(x) (sizeof(x)/sizeof((x)[0]))
 
 int binarySearch(int array[], int min, int max, int element){
-  // No mínio o maior valor precisar ser maior ou igual ao menor.
-  // Temos que fazer isso pois não tem um laço de repetição percorrrendo nosso array.
   if (max >= min) {
     int mid = min + (max - 1)/2;
     if(array[mid] == element) return mid;
