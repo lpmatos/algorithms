@@ -4,19 +4,20 @@ Primeiramente, obrigado 🎉! É muito gratificante saber que podemos contar com
 
 ## ➤ Overview
 
-Nosso objetivo aqui é gerar valor para o processo de desenvolvimento de projetos com múltiplas participações, independente de um time core. Pensando nisso, implementamos um arquivo de contribuição para abordarmos as melhores práticas a serem seguidas durante o processo de trabalho nesse projeto. O modelo é apenas uma recomendação e ainda está em processo de construção. Esperamos que todos possam contribuir para essa evolução 🤗!
+Nosso objetivo aqui é gerar valor para o processo de desenvolvimento de projetos com múltiplas participações. Pensando nisso, temos um documento de contribuição para abordarmos as melhores práticas a serem seguidas durante o processo de trabalho nesse projeto. 
+
+Nesse documento definimos o passo a passo de contribução para qualquer novo contribuidor. Ainda estamos em faze de homologação, portanto não é o documento final. Esperamos que todos possam ajudar nessa evolução 🤗!
 
 ## ➤ Menus
 
 - [＜ Contribuindo](#-contribuindo)
   - [➤ Overview](#-overview)
   - [➤ Menus](#-menus)
-  - [➤ Tools and Patterns](#-tools-and-patterns)
+  - [➤ Tools, Packages and Conventions](#-tools-packages-and-conventions)
     - [Tools](#tools)
-    - [Patterns](#patterns)
-  - [➤ Código de conduta](#-código-de-conduta)
+    - [Packages](#packages)
+    - [Conventions](#conventions)
   - [➤ Regras de codificação](#-regras-de-codificação)
-  - [➤ Teste suas mudanças](#-teste-suas-mudanças)
   - [➤ Submission Guidelines](#-submission-guidelines)
     - [Add to git and push](#add-to-git-and-push)
     - [Submitting a Merge Request (MR)](#submitting-a-merge-request-mr)
@@ -24,49 +25,61 @@ Nosso objetivo aqui é gerar valor para o processo de desenvolvimento de projeto
     - [Overview](#overview)
     - [Commit Message Format](#commit-message-format)
   - [➤ Release Steps](#-release-steps)
-    - [Code section](#code-section)
 
-## ➤ Tools and Patterns
+## ➤ Tools, Packages and Conventions
+
+Como estamos tratando de um desenvolvimento colaborativo, a padronização é algo que mais cedo ou mais tarde vai acontecer. Definir esse padrão mostra o quão maduro um time vai estar para colaborar e consequentemente isso será refletido em todo o processo de trabalho. O bônus que temos com isso é enorme e poderemos colher esse fruto em toda a cadeia de desenvolvimento da aplicação.
+
+Ao iniciar qualquer commit para esse repositório é de extrema importância que o contribuidor saiba o que ele precisa refletir em seu ambiente local para a sua contribução seguir os guidelines de padronização. Portanto, aqui listamos todas as ferramentas, pacotes e padrões utilizados como padrão nesse projeto.
 
 ### Tools
 
-- ⮚ Gerenciador de pacotes [NPM](https://www.npmjs.com/get-npm) ou [Yarn](https://yarnpkg.com/getting-started/install).
-- ⮚ Automatize tarefas locais com commandos [make](https://www.gnu.org/software/make/manual/make.html).
-- ⮚ Faça o scan de secredos em seu código com o [GitLeaks](https://github.com/zricethezav/gitleaks).
-- ⮚ Pacotes de automação utilizados:
-  - [Semantic Release](https://github.com/semantic-release/semantic-release) + Plugins de configuração
-  - [Commitlint](https://github.com/conventional-changelog/commitlint) usando [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
-  - Git Hooks com [Husky](https://github.com/typicode/husky).
+- ⮚ Gerenciador de pacotes [NPM](https://www.npmjs.com/get-npm) ou [Yarn](https://yarnpkg.com/getting-started/install) para instação das dependências de suporte.
+- ⮚ Automatizador de tarefas locais [make](https://www.gnu.org/software/make/manual/make.html).
+- ⮚ Scan de segredos [GitLeaks](https://github.com/zricethezav/gitleaks).
 
-### Patterns
+### Packages
+
+- ⮚ [Semantic Release](https://github.com/semantic-release) + Plugins de configuração
+  - [`semantic-release`](https://github.com/semantic-release/semantic-release)
+  - [`@semantic-release/git`](https://github.com/semantic-release/git)
+  - [`@semantic-release/github`](https://github.com/semantic-release/github)
+  - [`@semantic-release/changelog`](https://github.com/semantic-release/changelog)
+  - [`@semantic-release/commit-analyzer`](https://github.com/semantic-release/commit-analyzer)
+  - [`@semantic-release/release-notes-generator`](https://github.com/semantic-release/release-notes-generator)
+- ⮚ [Commitlint](https://github.com/conventional-changelog/commitlint) usando [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+  - [`commitizen`](https://github.com/commitizen/cz-cli)
+  - [`@commitlint/cli`](https://github.com/conventional-changelog/commitlint)
+  - [`@commitlint/config-conventional`](https://github.com/conventional-changelog/commitlint)
+- ⮚ Git Hooks com [Husky](https://github.com/typicode/husky).
+  - [`husky`](https://github.com/semantic-release/git)
+
+### Conventions
 
 - ⮚ [Semantic Versioning](https://semver.org/)
 - ⮚ [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
-
-## ➤ Código de conduta
-
-Nesse documento definimos o passo a passo de contribução para qualquer novo contribuidor. Aqui estão todas as diretrizes que gostaríamos que você seguisse 😄!
 
 ## ➤ Regras de codificação
 
 Para garantir a consistência do nosso código fonte, lembre-se de seguir essas regras enquanto trabalhar:
 
-- ⮚ Antes de iniciar o desenvolvimento se certifique de instalar todas as ferramentas abordadas na seção [Tools and Patterns](#-tools-and-patterns).
+- ⮚ Antes de iniciar o desenvolvimento se certifique de instalar todas as ferramentas abordadas na seção [Tools, Packages and Conventions](#-tools-packages-and-patterns).
 - ⮚ Todos as **features** ou **fixs** (correções de bugs) **devem ser testados**!
 - ⮚ A pipeline deve possui um status de sucesso antes de qualquer **merge-request** ser aprovado. Caso contrário, o código não é mesclado em seu branch alvo.
 - ⮚ Todas as **features** são criadas a partir da branch **develop**, possuindo curta duração e sendo mescladas novamente em **develop** assim que o **merge-request** for aprovado.
 - ⮚ Certifique-se de dar um `git rebase` antes de mesclar sua **feature** em **develop**, isso vai evitar possíveis conflitos, além de gerar um histórico linear das modificações.
-- ⮚ Fazer um `git squash` dos commits é uma boa prática caso queira manter um histórico de commits mais limpo.
-- ⮚ Nesse projeto utilizamos a convenção do [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) como boa prática para criação de mensagens de commit, que é totalmente ligada a convenção [SemVer](https://semver.org/), responsável por ditar as regras de versionamentodo/release do código. A partir dessas convenções conseguimos utilizar plugins **npm** para automatizar todo nosso processo de geração de **tag/release**, tudo de forma automática e com base em regras pré-configuradas, podendo ser customizáveis de acordo com o cenário.
-
-## ➤ Teste suas mudanças
-
-Ao criar um **merge-request**, nosso CI executará a pipeline para validar suas mudanças. Nenhuma alteração será aprovada caso a pipeline não seja bem sucedida. É vital que a branch **master** e qualquer outra branch de entrega, passe nos testes o tempo todo, caso contrário nada será aprovado. Sempre que possível adicione testes adicionais para garantir que seu código fique o melhor possível.
+- ⮚ Faça um `git squash` dos commits, isso é uma boa prática para manter um histórico de commits mais limpo.
+- ⮚ Ao abrir um **merge-request**, certifique-se de comunicar os maintainer-owners do projeto.
+- ⮚ Teste suas mudanças.
+  - Ao criar um **merge-request**, nosso CI executará a pipeline para validar suas mudanças. Nenhuma alteração será aprovada caso a pipeline não seja bem sucedida. É vital que a branch **master** e qualquer outra branch de entrega, passe nos testes o tempo todo, caso contrário nada será aprovado. Sempre que possível adicione testes adicionais para garantir que seu código fique o melhor possível.
+- ⮚ Caso queira promover seu código para um ambiente de release, abra um merge-request para a branch **release**.
 
 ## ➤ Submission Guidelines
 
+Nesse projeto utilizamos a convenção do [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) como boa prática para criação de mensagens de commit, que é totalmente ligada a convenção [SemVer](https://semver.org/), responsável por ditar as regras de versionamentodo/release do código. A partir dessas convenções conseguimos utilizar plugins **npm** para automatizar todo nosso processo de geração de **tag/release**, tudo de forma automática e com base em regras pré-configuradas, podendo ser customizáveis de acordo com o cenário.
+
 >
-> 1. Faça um **fork** ou crie uma **feature branch**. 
+> 1. Crie uma **feature branch**. 
 > 1. Leia as regras de contribução.
 > 1. Siga a organização do repositório sempre que você for alterar ou adicionar coisas.
 > 1. Faça um **commit** com suas alterações.
@@ -141,13 +154,37 @@ husky > commit-msg (node v12.14.0)
 husky > commit-msg hook failed (add --no-verify to bypass)
 ```
 
+Usando o commitzen para te ajudar a construir a mensagem de commit:
+
+```
+C:\>  git add .
+C:\>  npm run cm
+
+
+cz-cli@4.0.3, cz-conventional-changelog@3.2.0
+
+? Select the type of change that you're committing: (Use arrow keys)
+> feat:     A new feature
+  fix:      A bug fix
+  docs:     Documentation only changes
+  style:    Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+  refactor: A code change that neither fixes a bug nor adds a feature
+  perf:     A code change that improves performance
+  test:     Adding missing tests or correcting existing tests
+  build:    Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+  ci:       Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs) 
+  chore:    Other changes that don't modify src or test files
+  revert:   Reverts a previous commit
+```
+
 ## ➤ Release Steps
 
-1. Setup GitLab Token
-1. Run make release
-1. Run git commit `git commit -am "chore: bump version file"`
-
-### Code section
+1. Install all required tools.
+2. Setup your GitLab Token on Bash.
+3. Run make release-debug
+4. Run git commit `git commit -am "chore: bump version file"`
+5. Run make release
+6. Run `git pull --all && git pull --tags`
 
 ```bash
 export GITLAB_TOKEN=""
