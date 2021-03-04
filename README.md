@@ -6,17 +6,10 @@
 
 <div align="center">
 
-[![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/lpmatos/algorithms)
 [![Semantic Release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/lpmatos/algorithms)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](https://github.com/lpmatos/algorithms)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
-[![GitHub Language Count](https://img.shields.io/github/languages/count/lpmatos/algorithms.svg)](https://github.com/lpmatos/algorithms)
-[![GitHub Top Languag](https://img.shields.io/github/languages/top/lpmatos/algorithms.svg)](https://github.com/lpmatos/algorithms)
-[![GitHub Stars](https://img.shields.io/github/stars/lpmatos/algorithms.svg)](https://github.com/lpmatos/algorithms)
-[![GitHub Last Commit](https://img.shields.io/github/last-commit/lpmatos/algorithms.svg)](https://github.com/lpmatos/algorithms)
-[![GitHub Issues](https://img.shields.io/github/issues/lpmatos/algorithms.svg)](https://github.com/lpmatos/algorithms/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/lpmatos/algorithms.svg)](https://github.com/lpmatos/algorithms/pulls)
-[![GitLab CI](https://github.com/lpmatos/algorithms/actions/workflows/ci.yml/badge.svg)](https://github.com/lpmatos/algorithms/actions/workflows/ci.yml)
+[![CI](https://github.com/lpmatos/algorithms/actions/workflows/ci.yml/badge.svg)](https://github.com/lpmatos/algorithms/actions/workflows/ci.yml)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/lpmatos/algorithms)
 
 </div>
