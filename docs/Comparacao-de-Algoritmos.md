@@ -29,8 +29,7 @@ Para medir o tempo de um algoritmo podemos usar as seguintes estratégias:
   - Isso é muito difícil e também é desnecessário.
 - Identificar a operação mais importante: `operação básica`
   - Em outra palavra é indentificar a operação que impacta mais no tempo de execução.
-  - No geral, é a operação no laço mais interno do algoritmo.
-  - Contar quantas vezes ela é executada.
+  - No geral é a operação no laço mais interno do algoritmo. Ao achar, contamos quantas vezes ela é executada.
 
 ## ➤ Pior caso, melhor caso e caso médio
 
