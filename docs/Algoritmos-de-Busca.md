@@ -2,7 +2,9 @@
 
 ## ➤ Overview
 
-Os algoritmos de busca têm como objetivo verificar ou recuperar um elemento de qualquer estrutura de dados. Com base no tipo de ordenação, esses algoritmos são classificados em duas categorias:
+Os algoritmos de busca têm como objetivo verificar ou recuperar um elemento de qualquer estrutura de dados. 
+
+De acordo com o tipo de ordenação, podemos classificar esses algoritmos em duas catagorias:
 
 - **Busca Sequencial**:
   - Nesse tipo a estrutura de dados (`lista` ou `matriz`, por exemplo) é percorrida sequencialmente e cada elemento é verificado. A `busca linear` é um exemplo.
