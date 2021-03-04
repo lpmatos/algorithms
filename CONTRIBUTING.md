@@ -1,0 +1,159 @@
+# [＜](README.md) Contribuindo
+
+Primeiramente, obrigado 🎉! É muito gratificante saber que podemos contar com novas **features** e **pull-requests** da comunidade! Caso sua mudança não seja trivial, abra uma **issue** nesse projeto para podermos discutir a sua ideia e estratégia de implementação. Será incrível poder interagir e se conectar com novos contribuidores!
+
+## ➤ Overview
+
+Nosso objetivo aqui é gerar valor para o processo de desenvolvimento de projetos com múltiplas participações, independente de um time core. Pensando nisso, implementamos um arquivo de contribuição para abordarmos as melhores práticas a serem seguidas durante o processo de trabalho nesse projeto. O modelo é apenas uma recomendação e ainda está em processo de construção. Esperamos que todos possam contribuir para essa evolução 🤗!
+
+## ➤ Menus
+
+- [＜ Contribuindo](#-contribuindo)
+  - [➤ Overview](#-overview)
+  - [➤ Menus](#-menus)
+  - [➤ Tools and Patterns](#-tools-and-patterns)
+    - [Tools](#tools)
+    - [Patterns](#patterns)
+  - [➤ Código de conduta](#-código-de-conduta)
+  - [➤ Regras de codificação](#-regras-de-codificação)
+  - [➤ Teste suas mudanças](#-teste-suas-mudanças)
+  - [➤ Submission Guidelines](#-submission-guidelines)
+    - [Add to git and push](#add-to-git-and-push)
+    - [Submitting a Merge Request (MR)](#submitting-a-merge-request-mr)
+  - [➤ Commit Message Guidelines](#-commit-message-guidelines)
+    - [Overview](#overview)
+    - [Commit Message Format](#commit-message-format)
+  - [➤ Release Steps](#-release-steps)
+    - [Code section](#code-section)
+
+## ➤ Tools and Patterns
+
+### Tools
+
+- ⮚ Gerenciador de pacotes [NPM](https://www.npmjs.com/get-npm) ou [Yarn](https://yarnpkg.com/getting-started/install).
+- ⮚ Automatize tarefas locais com commandos [make](https://www.gnu.org/software/make/manual/make.html).
+- ⮚ Faça o scan de secredos em seu código com o [GitLeaks](https://github.com/zricethezav/gitleaks).
+- ⮚ Pacotes de automação utilizados:
+  - [Semantic Release](https://github.com/semantic-release/semantic-release) + Plugins de configuração
+  - [Commitlint](https://github.com/conventional-changelog/commitlint) usando [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+  - Git Hooks com [Husky](https://github.com/typicode/husky).
+
+### Patterns
+
+- ⮚ [Semantic Versioning](https://semver.org/)
+- ⮚ [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+
+## ➤ Código de conduta
+
+Nesse documento definimos o passo a passo de contribução para qualquer novo contribuidor. Aqui estão todas as diretrizes que gostaríamos que você seguisse 😄!
+
+## ➤ Regras de codificação
+
+Para garantir a consistência do nosso código fonte, lembre-se de seguir essas regras enquanto trabalhar:
+
+- ⮚ Antes de iniciar o desenvolvimento se certifique de instalar todas as ferramentas abordadas na seção [Tools and Patterns](#-tools-and-patterns).
+- ⮚ Todos as **features** ou **fixs** (correções de bugs) **devem ser testados**!
+- ⮚ A pipeline deve possui um status de sucesso antes de qualquer **merge-request** ser aprovado. Caso contrário, o código não é mesclado em seu branch alvo.
+- ⮚ Todas as **features** são criadas a partir da branch **develop**, possuindo curta duração e sendo mescladas novamente em **develop** assim que o **merge-request** for aprovado.
+- ⮚ Certifique-se de dar um `git rebase` antes de mesclar sua **feature** em **develop**, isso vai evitar possíveis conflitos, além de gerar um histórico linear das modificações.
+- ⮚ Fazer um `git squash` dos commits é uma boa prática caso queira manter um histórico de commits mais limpo.
+- ⮚ Nesse projeto utilizamos a convenção do [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) como boa prática para criação de mensagens de commit, que é totalmente ligada a convenção [SemVer](https://semver.org/), responsável por ditar as regras de versionamentodo/release do código. A partir dessas convenções conseguimos utilizar plugins **npm** para automatizar todo nosso processo de geração de **tag/release**, tudo de forma automática e com base em regras pré-configuradas, podendo ser customizáveis de acordo com o cenário.
+
+## ➤ Teste suas mudanças
+
+Ao criar um **merge-request**, nosso CI executará a pipeline para validar suas mudanças. Nenhuma alteração será aprovada caso a pipeline não seja bem sucedida. É vital que a branch **master** e qualquer outra branch de entrega, passe nos testes o tempo todo, caso contrário nada será aprovado. Sempre que possível adicione testes adicionais para garantir que seu código fique o melhor possível.
+
+## ➤ Submission Guidelines
+
+>
+> 1. Faça um **fork** ou crie uma **feature branch**. 
+> 1. Leia as regras de contribução.
+> 1. Siga a organização do repositório sempre que você for alterar ou adicionar coisas.
+> 1. Faça um **commit** com suas alterações.
+> 1. Abra um **merge-request** assim que perceber que suas alterações estão prontas para serem promovidas.
+> 1. Espere até que seu **merge-request** seja aprovada... 🚀
+>
+
+**Lembre-se**: Não existe código ruim, temos diferentes formas de resolver um mesmo problema. 😊
+
+### Add to git and push
+
+📝 Você precisa mandar suas modificações para o servidor do Git assim que terminá-las. Para isso, faça o seguinte:
+
+```bash
+git add -f .
+git commit -m "chore(initial): include config files"
+git push -u origin <branch-alvo>
+```
+
+### Submitting a Merge Request (MR)
+
+Antes de aceitar um **merge-request**, preferimos que você esmague seus commits em um único commit utilizando o `git stash`. Essa ação visa garantir um histórico de commits mais limpo. A maioria das ferramentas Git já possuem integração pela própria UI para já acionar esse comando durante a abertura dessa mesclagem e no GitLab não é diferente.
+
+Assumindo que o **code-review** foi concluído e os teste foram passados (a pipeline foi bem sucedida), sua mudança deve ser mesclada o mais rápido possível para a branch alvo.
+
+Lembre-se de sempe marcar para delete a branch caso ela seja uma **feature** ou **fix**, não recomendamos guardar branches de curta durança em seu histórico de branchs (pode causar conflitos e confusão no futuro).
+
+## ➤ Commit Message Guidelines
+
+Como dito nas regras de codificação, temos regras muito precisas sobre como nossas mensagens `git commit` devem ser formatadas. Isso leva a mensagens mais legíveis e fáceis de seguir ao examinar o histórico de contribução do projeto. Também usamos essa convenção de mensagens git commit para estruturar e gerar um arquivo de log com as alterações do nosso projeto, o famoso **CHANGELOG.md**.
+
+### Overview
+
+A especificação do [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) é uma convenção para suas mensagens de commit. Ele fornece um conjunto fácil de regras para criar um histórico de commit explícito; o que torna mais fácil escrever ferramentas automatizadas. Essa convenção se encaixa com o [SemVer](https://semver.org/), descrevendo os recursos, correções e alterações importantes feitas nas mensagens de commit.
+
+### Commit Message Format
+
+A mensagem de commit deve ser estruturada da seguinte forma:
+
+```text
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+Cada mensagem de commit consiste na estrutura acima. Temos um `header`, um `body`e um `footer`. O `header` tem um formato especial que inclui um `type`, um `scope` e uma `description`, sendo o `header` um campo obrigatório, porém seu `scope` opcional.
+
+Para poder comuniar a intenção da sua alteração, a mensagem de commit contém os seguintes elementos estruturais:
+
+1. **fix**: um commit do tipo `fix` corrige um bug em seu código (isso se correlaciona com o **PATCH** no **semantic versioning**).
+1. **feat**: um commit do tipo `feat` introduz uma nova feature (recurso) em seu código (isso se correlaciona com o **MINOR** no **semantic versioning**)
+1. **BREAKING CHANGE**: um commit que tem seu `footer` com a mensagem `BREAKING CHANGE` ou possui um `!` após o type ou scope, introduz uma mudança significativa em seu código (isso se correlaciona com o **MAJOR** no **semantic versioning**). Uma `BREAKING CHANGE` pode fazer parte de qualquer tipo de commit.
+1. Existem outros tipos de commit além do `fix` e `feat`. São permitidos vários tipos, como - `build`, `chore`, `ci`, `docs`, `style`, `refactor`, `perf`, `test` e outros. A lista completa é baseada na [convenção do angular](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines) e pode ser vista em [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional).
+
+Qualquer mensagem de commit não pode ter mais que 100 caracteres! Isso quebraria a nossa convenção. Esse limite permite que a mensagem seja mais fácil de ler em várias ferramentas Git.
+
+```bash
+C:\>  git add .
+C:\>  git commit -m "commit"
+
+
+husky > commit-msg (node v12.14.0)
+⧗   input: commit
+✖   subject may not be empty [subject-empty]
+✖   type may not be empty [type-empty]
+
+✖   found 2 problems, 0 warnings
+ⓘ   Get help: https://github.com/conventional-changelog/commitlint/#what-is-commitlint
+
+husky > commit-msg hook failed (add --no-verify to bypass)
+```
+
+## ➤ Release Steps
+
+1. Setup GitLab Token
+1. Run make release
+1. Run git commit `git commit -am "chore: bump version file"`
+
+### Code section
+
+```bash
+export GITLAB_TOKEN=""
+make release-debug
+git commit -am "chore: bump version file"
+make release
+git pull --all
+git pull --tags
+```

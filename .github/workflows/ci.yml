@@ -1,0 +1,67 @@
+name: CI
+
+# Trigger the workflow on push or pull request, but only for the main branch
+#
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  commit-lint:
+    name: Commit Lint
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Install node dependencies
+        run: npm install
+        continue-on-error: false
+
+      - name: Run commit lint action
+        uses: wagoid/commitlint-github-action@v3
+        env:
+          NODE_PATH: ${{ github.workspace }}/node_modules
+        continue-on-error: false
+
+  gitleaks:
+    name: GitLeaks
+    runs-on: ubuntu-20.04
+    needs: commit-lint
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Run gitleaks action
+        uses: zricethezav/gitleaks-action@master
+        with:
+          config-path: .gitleaks.toml
+        continue-on-error: false
+
+  antivurs-scan:
+    name: AntiVirus Scan
+    runs-on: ubuntu-20.04
+    needs: gitleaks
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run antiVirus scan action
+        uses: djdefi/gitavscan@main
+        continue-on-error: false
