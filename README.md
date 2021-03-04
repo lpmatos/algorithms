@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="logo" src="https://guiatech.net/wp-content/uploads/2018/01/algoritmos-1.jpg" width="350px" float="center"/>
+  <img alt="logo" src="https://steamuserimages-a.akamaihd.net/ugc/90470964761468233/EBE96184DD5BD1AFD12E7550B87CE0E24D9772AB/" width="350px" float="center"/>
 </p>
 
 <h3 align="center">👨‍💻 Computer Science Algorithms 👨‍💻</h3>
