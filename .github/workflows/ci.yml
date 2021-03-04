@@ -47,7 +47,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Run gitleaks action
+      - name: Run gitleaks secrets scan action
         uses: zricethezav/gitleaks-action@master
         with:
           config-path: .gitleaks.toml

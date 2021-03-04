@@ -3,6 +3,6 @@
 # shellcheck source=/dev/null
 . "$(dirname "$0")/_/husky.sh"
 
-echo "✨ Run gitleaks scan secrets"
+echo "✨ Run gitleaks secrets scan"
 
 npm run secrets
