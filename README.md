@@ -127,6 +127,12 @@ winpty docker.exe container run -it --rm <IMAGE_NAME> <COMMAND>
 
 ---
 
+## ➤ Contributing
+
+Contributions, issues and feature requests are welcome. Feel free to check issues page if you want to contribute. [Check the contributing guide](CONTRIBUTING.md).
+
+---
+
 ## ➤ License <a name = "license"></a>
 
 This project is distributed under the MIT License. See [LICENSE](LICENSE) file for more information.
