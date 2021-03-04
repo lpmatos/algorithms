@@ -2,7 +2,7 @@
   <img alt="logo" src="https://guiatech.net/wp-content/uploads/2018/01/algoritmos-1.jpg" width="350px" float="center"/>
 </p>
 
-<h3 align="center">👨‍💻 Algorithms study repo 👨‍💻</h3>
+<h3 align="center">👨‍💻 Computer Science Algorithms 👨‍💻</h3>
 
 <div align="center">
 
@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">  
-  Theory and implementation of a few computer science algorithms for fun and study!
+  Theory and implementation of a few algorithms just for fun!
 </p>
 
 <p align="center">
@@ -33,7 +33,7 @@
 
 ## ➤ About <a name = "about"></a>
 
-The objective of this project is the theoretical and practical study of some algorithms presented in the computer course.
+Practical and theoretical study of some computer science algorithms.
 
 ---
 
@@ -76,6 +76,12 @@ This shareable configuration use the following dependencies:
 - [`@semantic-release/release-notes-generator`](https://github.com/semantic-release/release-notes-generator)
 
 For more information, access the [CONTRIBUTING](CONTRIBUTING.md) file.
+
+---
+
+## Algorithms
+
+An algorithm is an unambiguous specification of how to solve a class of problems. It is a set of rules that precisely define a sequence of operations.
 
 ---
 
@@ -135,7 +141,7 @@ Contributions, issues and feature requests are welcome. Feel free to check issue
 
 ## ➤ License <a name = "license"></a>
 
-This project is distributed under the MIT License. See [LICENSE](LICENSE) file for more information.
+This repository is released under the [MIT license](https://opensource.org/licenses/MIT). In short, this means you are free to use this software in any personal, open-source or commercial projects. Attribution is optional but appreciated.
 
 ---
 
