@@ -6,12 +6,13 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+      - develop
+    paths-ignore:
+      - docs/**
 
 jobs:
   commit-lint:
+    if: github.ref == 'refs/heads/main'
     name: Commit Lint
     runs-on: ubuntu-20.04
 
@@ -37,6 +38,7 @@ jobs:
         continue-on-error: false
 
   gitleaks:
+    if: github.ref == 'refs/heads/main'
     name: GitLeaks
     runs-on: ubuntu-20.04
     needs: commit-lint
@@ -54,6 +56,21 @@ jobs:
         continue-on-error: false
 
   antivurs-scan:
+    if: github.ref == 'refs/heads/main'
+    name: AntiVirus Scan
+    runs-on: ubuntu-20.04
+    needs: gitleaks
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run antiVirus scan action
+        uses: djdefi/gitavscan@main
+        continue-on-error: false
+
+  antivurs-scan-develop:
+    if: github.ref == 'refs/heads/develop'
     name: AntiVirus Scan
     runs-on: ubuntu-20.04
     needs: gitleaks
