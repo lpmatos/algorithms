@@ -88,7 +88,7 @@ jobs:
         continue-on-error: false
 
   antivurs-scan-develop:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/develop'
     name: AntiVirus Scan
     runs-on: ubuntu-20.04
     needs: gitleaks
